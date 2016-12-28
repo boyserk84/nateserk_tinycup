@@ -92,12 +92,14 @@ if ( !function_exists('nateserk_tinycup_social_links') ) :
                     $html_class = "twitch";
                     $html_dataTitle = "Twitch";
                 break;
+
+                default:
+                break;
             }
 
-            if ( !empty( $options['nateserk_tinycup-facebook-url'] ) ) { ?>
+            if ( !empty( $html_IconDiv ) ) { ?>
                   <a href="<?php echo esc_url( $html_Url ); ?>" class="<?php echo $html_class; ?>" data-title="<?php echo $html_dataTitle; ?>" target="_blank">
-                      <i class="<?php echo $html_IconDiv; ?>"></i>
-                  </a>
+                      <i class="<?php echo $html_IconDiv; ?>"></i></a>
               <?php
             }
 
