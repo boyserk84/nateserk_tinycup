@@ -54,6 +54,7 @@ html {
 
 body {
 	margin: 0;
+	text-align: center;
 }
 
 article,
@@ -893,3 +894,7 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+## Customized CSS
+--------------------------------------------------------------*/
