@@ -17,7 +17,13 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content-single', get_post_format() );
 
-			the_post_navigation();
+			// Pagination for going to the next or previous post
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="col-xs-12 col-md-12"><i class="fa fa-arrow-circle-left fa-5x" aria-hidden="true"></i> <h2>%title</h2></span>',
+					'next_text' => '<span class="col-xs-12 col-md-12" style="text-align:center;"><i class="fa fa-arrow-circle-right fa-5x" aria-hidden="true"></i> <h2>%title</h2></span>'
+				)
+			);
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

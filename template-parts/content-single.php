@@ -44,7 +44,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false ) // TODO: Figure this out to center it
 			) );
 
-			// Pagination
+			// Pagination within this given page or post
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nateserk_tinycup' ),
 				'after'  => '</div>',
