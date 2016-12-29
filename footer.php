@@ -40,7 +40,10 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php
+wp_footer();
+do_action('nateserk_tinycup_action_after_footer');
+?>
 
 </body>
 </html>
