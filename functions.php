@@ -48,7 +48,8 @@ function nateserk_tinycup_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'nateserk_tinycup' ),
+		'menu-header' => esc_html__( 'Primary', 'nateserk_tinycup' ),
+		'menu-footer'=> esc_html__( 'Footer', 'nateserk_tinycup')
 	) );
 
 	/*
@@ -110,6 +111,9 @@ add_action( 'widgets_init', 'nateserk_tinycup_widgets_init' );
  */
 function nateserk_tinycup_scripts() {
 	wp_enqueue_style( 'nateserk_tinycup-style', get_stylesheet_uri() );
+
+	/*Font-Awesome-master*/
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/library/font-awesome/css/font-awesome.min.css', array(), '4.7.0' );
 
 	wp_enqueue_script( 'nateserk_tinycup-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
