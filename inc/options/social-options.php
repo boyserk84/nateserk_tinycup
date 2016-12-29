@@ -26,7 +26,7 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-ena
     'description'=> __('Showing or hiding social media links.'),
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-enable-social]',
     'type'	  	=> 'checkbox',
-    'priority'  => 25
+    'priority'  => 15
 ) );
 
 
@@ -41,7 +41,7 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-fac
     'section'   => $SECTION_NAME,
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-facebook-url]',
     'type'	  	=> 'url',
-    'priority'  => 20
+    'priority'  => 16
 ) );
 
 /* Twitter URL */
@@ -55,7 +55,7 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-twi
     'section'   => $SECTION_NAME,
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-twitter-url]',
     'type'	  	=> 'url',
-    'priority'  => 20
+    'priority'  => 17
 ) );
 
 /* Instagram URL */
@@ -69,7 +69,7 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-ins
     'section'   => $SECTION_NAME,
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-instagram-url]',
     'type'	  	=> 'url',
-    'priority'  => 20
+    'priority'  => 18
 ) );
 
 /* Google Plus URL */
@@ -83,7 +83,7 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-goo
     'section'   => $SECTION_NAME,
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-google-plus-url]',
     'type'	  	=> 'url',
-    'priority'  => 20
+    'priority'  => 19
 ) );
 
 /* Tumblr URL */
@@ -111,7 +111,7 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-sna
     'section'   => $SECTION_NAME,
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-snapchat-url]',
     'type'	  	=> 'url',
-    'priority'  => 20
+    'priority'  => 21
 ) );
 
 /* Twitch URL */
@@ -125,5 +125,5 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-twi
     'section'   => $SECTION_NAME,
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-twitch-url]',
     'type'	  	=> 'url',
-    'priority'  => 20
+    'priority'  => 22
 ) );
