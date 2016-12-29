@@ -192,12 +192,18 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post. 
+#. translators: %s: Name of current post.
 #: template-parts/content.php:33
 #, php-format
 #@ _s
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
+
+
+#: hooks/related-posts.php: 25
+msgid "You may also like..."
+msgstr ""
+
 
 #. Theme Name of the plugin/theme
 msgid "_s"
