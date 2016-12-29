@@ -25,6 +25,10 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
 	/** Social Media Options */
 	$social_options_file_path = nateserk_tinycup_file_directory('inc/options/social-options.php');
 	require $social_options_file_path;
+
+  /** Related-posts options */
+  $related_posts_options_file_path = nateserk_tinycup_file_directory('inc/options/related-posts-options.php');
+	require $related_posts_options_file_path;
 }
 add_action( 'customize_register', 'nateserk_tinycup_customize_register' );
 
