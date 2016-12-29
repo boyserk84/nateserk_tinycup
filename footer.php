@@ -14,6 +14,24 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="col-xs-12 col-md-12">
+				<?php
+					// Show legal menu
+					if ( has_nav_menu( 'menu-footer') ) {
+						wp_nav_menu(
+						 array(
+							 'theme_location' => 'menu-footer',
+							 'menu_id' => 'legal-menu',
+							 'menu_class'=>'nav navbar-nav',
+							 'container'=> 'ul',
+							 'depth'=> 1
+							)
+						 );
+				 	}
+				 ?>
+			</div>
+		</nav>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nateserk_tinycup' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'nateserk_tinycup' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
