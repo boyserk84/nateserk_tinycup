@@ -1,12 +1,8 @@
 <?php
 /**
- * Template part for displaying posts
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package nateserk-tinycup
- */
-
+* content-related.php
+* Show related posts either by category or tags.
+*/
 ?>
 <div class="col-xs-12 col-md-3">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
