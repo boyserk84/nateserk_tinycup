@@ -1,4 +1,8 @@
 <?php
+/**
+* hooks/header.php
+* All functions that need to be called or triggered within the header.
+*/
 
 /**
  * Setting global variables for all theme options db saved values

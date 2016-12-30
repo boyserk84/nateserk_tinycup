@@ -1,5 +1,11 @@
 <?php
 /**
+* hooks/footer.php
+* All functions that need to be called or triggered within the footer.
+*/
+
+
+/**
  * Load external stylesheets and scripts
  *
  * @param null
