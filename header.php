@@ -34,11 +34,8 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="row">
 			<div class="col-xs-12 col-md-12 site-branding">
-				<?php
-				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
-				endif;
 
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
@@ -52,7 +49,7 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<?php esc_html_e( 'Primary Menu', 'nateserk_tinycup' ); ?>
 					</button>
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-header', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 		</div>
 		<?php
