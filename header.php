@@ -44,14 +44,21 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 				endif; ?>
 			</div><!-- .site-branding -->
 
-		<div class="col-xs-12 col-md-12 site-branding">
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-						<?php esc_html_e( 'Primary Menu', 'nateserk_tinycup' ); ?>
-					</button>
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-header', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
-		</div>
+		<div class="container-fluid">
+				<nav class="navbar" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				  <div class="navbar-header">
+				    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				      <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+				    </button>
+				  </div><!--navbar-header-->
+				  <!-- Collect the nav links, forms, and other content for toggling -->
+				  <div class="collapse navbar-collapse navbar-ex1-collapse">
+						<?php do_action('nateserk_tinycup_action_setup_menu', 'menu-header'); ?>
+				  </div><!-- navbar-ex1-collapse -->
+				</nav><!--navbar-->
+		</div><!--container-fluid-->
+
 		<?php
 			// Showing social links
 			do_action('nateserk_tinycup_action_show_social_options');

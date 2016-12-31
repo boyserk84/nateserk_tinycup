@@ -18,17 +18,9 @@
 			<div class="col-xs-12 col-md-12">
 				<?php
 					// Show legal menu
-					if ( has_nav_menu( 'menu-footer') ) {
-						wp_nav_menu(
-						 array(
-							 'theme_location' => 'menu-footer',
-							 'menu_id' => 'legal-menu',
-							 'menu_class'=>'nav navbar-nav',
-							 'container'=> 'ul',
-							 'depth'=> 1
-							)
-						 );
-				 	}
+					if ( has_nav_menu( 'menu-footer') ) :
+						do_action('nateserk_tinycup_action_setup_menu', 'menu-footer');
+				 	endif;
 				 ?>
 			</div>
 		</nav>

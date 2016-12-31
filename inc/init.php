@@ -82,6 +82,9 @@ require $nateserk_tinycup_header_file_path;
 $nateserk_tinycup_footer_file_path = nateserk_tinycup_file_directory('hooks/footer.php');
 require $nateserk_tinycup_footer_file_path;
 
+$nateserk_tinycup_footer_file_path = nateserk_tinycup_file_directory('hooks/menu.php');
+require $nateserk_tinycup_footer_file_path;
+
 $nateserk_tinycup_social_links_file_path = nateserk_tinycup_file_directory('hooks/social-links.php');
 require $nateserk_tinycup_social_links_file_path;
 
