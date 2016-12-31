@@ -110,6 +110,9 @@ add_action( 'widgets_init', 'nateserk_tinycup_widgets_init' );
  * Enqueue scripts and styles.
  */
 function nateserk_tinycup_scripts() {
+	/*google font */
+	wp_enqueue_style( 'nateserk_tinycup-googleapis', esc_url_raw("https://fonts.googleapis.com/css?family=Fjalla+One"), array(), '1.0.0' , 'screen');
+
 	wp_enqueue_style( 'nateserk_tinycup-style', get_stylesheet_uri() );
 
 	/*Font-Awesome-master*/
