@@ -45,6 +45,10 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-related-posts-type'=>'tags',
             'nateserk_tinycup-related-posts-per-page'=> 4,
 
+            /** Logo header image */
+            'nateserk_tinycup-show-header-logo' => false,
+            'nateserk_tinycup-header-logo-media-url'=> '',
+
             /** Index page */
             'nateserk_tinycup-show-thumbnail-type'=> '',
         );

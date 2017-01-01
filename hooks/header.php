@@ -43,3 +43,25 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_stylesheets' ) ) :
 
 endif;
 add_action( 'nateserk_tinycup_action_in_header', 'nateserk_tinycup_set_external_stylesheets', 0 );
+
+/**
+* Show the site's logo or text title
+*
+* @param null
+* @return null
+*/
+if ( ! function_exists( 'nateserk_tinycup_set_site_header_title' ) ) :
+
+    function nateserk_tinycup_set_site_header_title() {
+        $options = nateserk_tinycup_get_theme_options();
+        if ( $options['nateserk_tinycup-show-header-logo'] && !empty($options['nateserk_tinycup-header-logo-media-url']) ) :
+          ?>
+          <img src="<?php echo $options['nateserk_tinycup-header-logo-media-url']; ?>" title='<?php bloginfo('name'); ?>' />
+          <?php
+        else:
+          bloginfo( 'name' );
+        endif;
+    }
+
+endif;
+add_action( 'nateserk_tinycup_action_site_header_title', 'nateserk_tinycup_set_site_header_title', 0 );

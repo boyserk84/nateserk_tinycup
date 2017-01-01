@@ -34,7 +34,12 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="row">
 			<div class="col-xs-12 col-md-12 site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php
+					// show title or logo
+					do_action('nateserk_tinycup_action_site_header_title');
+				?>
+				</a></h1>
 				<?php
 
 				$description = get_bloginfo( 'description', 'display' );
