@@ -20,9 +20,19 @@ Requirement
 Getting Started
 ===
 
-* Directory
-** hooks/ - Actions to be triggered in various parts of TinyCup Wordpress theme (i.e. loading specific headers, showing related posts).
-** inc/options - Customizable UI options for end-users to add and update their contents without touching codes.
-** init.php - Initialization of the theme
-** customizer.php - Register options for end-user's customizable UI.
-** template-parts/ - PHP/HTML reusable templates for single.php, header.php, footer.php, and page.php.
+Where things are
+* hooks/ - Actions to be triggered in various parts of TinyCup Wordpress theme (i.e. loading specific headers, showing related posts).
+* inc/options - Customizable options UI for end-users to add and update their contents without touching codes.
+* init.php - Initialization of the theme
+* customizer.php - Register options for end-user's customizable UI.
+* template-parts/ - PHP/HTML reusable templates for single.php, header.php, footer.php, and page.php.
+
+Developing Custom Options
+===
+1.) Add options UI
+
+2.) Add Hooks functionality
+
+3.) Register your options
+
+4.) Integrate and trigger your hook
