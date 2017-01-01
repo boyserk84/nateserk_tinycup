@@ -14,6 +14,12 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="social-footer col-xs-12 col-md-12">
+		<?php
+			// Showing social links
+			do_action('nateserk_tinycup_action_show_social_options');
+		?>
+		</div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="col-xs-12 col-md-12">
 				<?php

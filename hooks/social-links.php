@@ -98,8 +98,9 @@ if ( !function_exists('nateserk_tinycup_social_links') ) :
             }
 
             if ( !empty( $html_IconDiv ) ) { ?>
+                  <span style="margin-left:10px">
                   <a href="<?php echo esc_url( $html_Url ); ?>" class="<?php echo $html_class; ?>" data-title="<?php echo $html_dataTitle; ?>" target="_blank">
-                      <i class="<?php echo $html_IconDiv; ?>"></i></a>
+                      <i class="<?php echo $html_IconDiv; ?>"></i></a></span>
               <?php
             }
 

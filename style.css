@@ -917,6 +917,12 @@ object {
 .site-navigation a:hover {
 	text-decoration: none;
 }
+
+.social-footer {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
 /*--------------------------------------------------------------
 ## Hover effect CSS
 --------------------------------------------------------------*/
