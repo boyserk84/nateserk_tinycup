@@ -51,6 +51,9 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
 
             /** Index page */
             'nateserk_tinycup-show-thumbnail-type'=> '',
+
+            /** Copyright option */
+            'nateserk_tinycup-copyright-name' => ''
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );

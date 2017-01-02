@@ -30,10 +30,11 @@
 				 ?>
 			</div>
 		</nav>
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nateserk_tinycup' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'nateserk_tinycup' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'nateserk_tinycup' ), 'nateserk_tinycup', '<a href="https://automattic.com/" rel="designer">Nate K</a>' ); ?>
+		<div class="col-md-12 site-info">
+			<?php
+			do_action('nateserk_tinycup_action_copyright');
+			?>
+			<p><?php printf( esc_html__( 'Design and Powered By: %1$s.', 'nateserk_tinycup' ), '<a href="https://automattic.com/" rel="designer">NateSerk TinyCup</a>' ); ?></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
