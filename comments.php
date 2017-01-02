@@ -20,6 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
+<hr width=100%>
 <div id="comments" class="comments-area">
 
 	<?php
@@ -78,8 +79,10 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'nateserk_tinycup' ); ?></p>
 	<?php
 	endif;
-
-	comment_form();
 	?>
-
+	<div class="col-md-12">
+		<?php
+		comment_form();
+		?>
+	</div>
 </div><!-- #comments -->

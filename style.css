@@ -924,6 +924,26 @@ object {
 }
 
 /*--------------------------------------------------------------
+## Comments CSS
+--------------------------------------------------------------*/
+.comment-respond,
+.comment-list {
+	margin-left: 10%;
+	margin-right:10%;
+	width:80%;
+}
+
+.comment-body {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #F2F1EF;
+}
+
+.comment-list  {
+	text-align:left;
+}
+
+/*--------------------------------------------------------------
 ## Hover effect CSS
 --------------------------------------------------------------*/
 .hovereffect {

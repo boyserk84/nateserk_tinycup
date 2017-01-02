@@ -54,7 +54,7 @@
 
 	<footer class="entry-footer">
 		<?php
-		 	do_action("nateserk_tinycup_related_posts", the_ID() );
+		 	do_action("nateserk_tinycup_related_posts", get_the_ID() );
 			nateserk_tinycup_entry_footer();
 		?>
 	</footer><!-- .entry-footer -->
