@@ -50,7 +50,7 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-header-logo-media-url'=> '',
 
             /** Index page */
-            'nateserk_tinycup-show-thumbnail-type'=> '',
+            'nateserk_tinycup-tb-div'=> 'thumbnail',
 
             /** Copyright option */
             'nateserk_tinycup-copyright-name' => ''

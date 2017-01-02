@@ -34,9 +34,13 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
   $header_logo_file_path = nateserk_tinycup_file_directory('inc/options/header-logo-options.php');
 	require $header_logo_file_path;
 
-  /** header-logo options */
+  /** copyright-optionsright options */
   $copyright_options_file_path = nateserk_tinycup_file_directory('inc/options/copyright-options.php');
 	require $copyright_options_file_path;
+
+  /** thumbnail options */
+  $tb_options_file_path = nateserk_tinycup_file_directory('inc/options/thumbnail-options.php');
+	require $tb_options_file_path;
 }
 add_action( 'customize_register', 'nateserk_tinycup_customize_register' );
 
