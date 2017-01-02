@@ -13,6 +13,13 @@ Libraries Included
 * Google Fonts
 * Bootstrap CSS
 
+End-Users Customizable Features
+===
+* Logo as a title
+* Show related posts by category or tags
+* Social media links
+* Copyright text
+
 Requirement
 ===
 * Wordpress 4.7
@@ -27,7 +34,7 @@ Where things are
 * customizer.php - Register options for end-user's customizable UI.
 * template-parts/ - PHP/HTML reusable templates for single.php, header.php, footer.php, and page.php.
 
-Developing Custom Options
+Developing Custom Options Guide
 ===
 1.) Add options UI
 
