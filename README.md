@@ -13,12 +13,13 @@ Libraries Included
 * Google Fonts
 * Bootstrap CSS
 
-End-Users Customizable Features
+End-Users Ready-to-use Customizable Features
 ===
 * Logo as a title
 * Show related posts by category or tags
 * Social media links
 * Copyright text
+* Article Thumbnail (round, circle, frame)
 
 Requirement
 ===
