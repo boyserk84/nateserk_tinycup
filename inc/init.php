@@ -53,7 +53,19 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-tb-div'=> 'thumbnail',
 
             /** Copyright option */
-            'nateserk_tinycup-copyright-name' => ''
+            'nateserk_tinycup-copyright-name' => '',
+
+            /** Home Modal dialog option */
+            'nateserk_tinycup-home-modal-dialog-toggle' => false,
+            'nateserk_tinycup-home-modal-dialog-title'=> 'Modal Title',
+            'nateserk_tinycup-home-modal-dialog-body'=> 'Body Content',
+            'nateserk_tinycup-home-modal-dialog-btn-primary-action'=> 'dismiss',
+            'nateserk_tinycup-home-modal-dialog-btn-primary-text'=> 'Ok',
+            'nateserk_tinycup-home-modal-dialog-btn-primary-url'=> '',
+            'nateserk_tinycup-home-modal-dialog-btn-secondary-text'=> 'Go Search',
+            'nateserk_tinycup-home-modal-dialog-btn-secondary-action'=> 'redirect',
+            'nateserk_tinycup-home-modal-dialog-btn-secondary-url'=> 'http://www.google.com'
+
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );
