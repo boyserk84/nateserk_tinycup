@@ -64,7 +64,8 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-home-modal-dialog-btn-primary-url'=> '',
             'nateserk_tinycup-home-modal-dialog-btn-secondary-text'=> 'Go Search',
             'nateserk_tinycup-home-modal-dialog-btn-secondary-action'=> 'redirect',
-            'nateserk_tinycup-home-modal-dialog-btn-secondary-url'=> 'http://www.google.com'
+            'nateserk_tinycup-home-modal-dialog-btn-secondary-url'=> 'http://www.google.com',
+            'nateserk_tinycup-home-modal-dialog-dismiss-outside-allow'=> true
 
         );
 

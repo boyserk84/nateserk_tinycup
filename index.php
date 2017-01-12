@@ -12,8 +12,13 @@
  * @package nateserk-tinycup
  */
 
-get_header(); ?>
+get_header();
 
+// Showing home modal dialog (if enable)
+if ( is_home() ) :
+		get_template_part( 'template-parts/content', 'modal' );
+endif;
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

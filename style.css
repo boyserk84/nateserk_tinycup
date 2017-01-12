@@ -1,11 +1,11 @@
 /*
 Theme Name: nateserk-tinycup
 Theme URI: http://underscores.me/
-Author: Nate K
-Author URI: http://underscores.me/
-Description: Awesome minimalist Wordpress theme.
+Author: NateSerk
+Author URI: http://nateserk.com
+Description: TinyCup is a minimalist Wordpress theme with a clean layout and mobile-friendly support. It also comes with features such as thumbnails options, social icons/links options, copyright text, related posts and a customized image as title.
 Version: 1.0.0
-License: GNU General Public License v2 or later
+License: GNU General Public License v3 or later
 License URI: LICENSE
 Text Domain: nateserk_tinycup
 Tags:
@@ -921,6 +921,10 @@ object {
 .social-footer {
 	margin-top:15px;
 	margin-bottom:15px;
+}
+
+body.modal-open #main, body.modal-open #masthead{
+    -webkit-filter: blur(5px) grayscale(90%);
 }
 
 /*--------------------------------------------------------------

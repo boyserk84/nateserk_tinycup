@@ -29,8 +29,28 @@ $wp_customize->add_control( $TOGGLE_ID, array(
     'description'=> __('(i.e. marketing, advertising, MOTD, warning, update status)'),
     'settings'  => $TOGGLE_ID,
     'type'	  	=> 'checkbox',
+    'priority'  => 14
+) );
+
+$DISMISS_OUTSIDE_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-home-modal-dialog-dismiss-outside-allow]';
+$DISMISS_OUTSIDE_KEY = 'nateserk_tinycup-home-modal-dialog-dismiss-outside-allow';
+
+/* Enable/Disable click outside dialog to disiss*/
+$wp_customize->add_setting( $DISMISS_OUTSIDE_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$DISMISS_OUTSIDE_KEY],
+    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+) );
+
+$wp_customize->add_control( $DISMISS_OUTSIDE_ID, array(
+    'label'		=> __( 'Dismiss when click outside.', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('Allow dismissing the modal dialog by clicking outside the dialog.'),
+    'settings'  => $DISMISS_OUTSIDE_ID,
+    'type'	  	=> 'checkbox',
     'priority'  => 15
 ) );
+
 
 $TITLE_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-home-modal-dialog-title]';
 $TITLE_KEY = 'nateserk_tinycup-home-modal-dialog-title';
