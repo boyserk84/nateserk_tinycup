@@ -45,6 +45,11 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
   /** Home Modal dialog options */
   $home_modal_options_file_path = nateserk_tinycup_file_directory('inc/options/home-modal-dialog-options.php');
 	require $home_modal_options_file_path;
+
+  /** Custom links color options */
+  $link_color_options_file_path = nateserk_tinycup_file_directory('inc/options/custom-links-color-options.php');
+	require $link_color_options_file_path;
+
 }
 add_action( 'customize_register', 'nateserk_tinycup_customize_register' );
 

@@ -38,6 +38,32 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_stylesheets' ) ) :
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <?php
+          // Customized style CSS (override for custom-links-color-options)
+          $options = nateserk_tinycup_get_theme_options();
+        ?>
+        <style type="text/css">
+          <?php
+          if (!empty($options['nateserk_tinycup-custom-link-color'])) : ?>
+            a {
+              color:<?php echo $options['nateserk_tinycup-custom-link-color']; ?>;
+            }
+          <?php
+          endif;
+          if (!empty($options['nateserk_tinycup-custom-link-hover-color'])) : ?>
+            a:hover {
+              color:<?php echo $options['nateserk_tinycup-custom-link-hover-color']; ?>;
+            }
+          <?php
+          endif;
+          if (!empty($options['nateserk_tinycup-custom-link-visited-color'])) : ?>
+            a:visited {
+              color:<?php echo $options['nateserk_tinycup-custom-link-visited-color']; ?>;
+            }
+          <?php
+          endif;?>
+        </style><!--override CSS stylesheet-->
         <?php
     }
 

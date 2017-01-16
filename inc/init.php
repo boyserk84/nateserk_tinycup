@@ -65,8 +65,12 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-home-modal-dialog-btn-secondary-text'=> 'Go Search',
             'nateserk_tinycup-home-modal-dialog-btn-secondary-action'=> 'redirect',
             'nateserk_tinycup-home-modal-dialog-btn-secondary-url'=> 'http://www.google.com',
-            'nateserk_tinycup-home-modal-dialog-dismiss-outside-allow'=> true
+            'nateserk_tinycup-home-modal-dialog-dismiss-outside-allow'=> true,
 
+            /** Link colors **/
+            'nateserk_tinycup-custom-link-color'=>'',
+            'nateserk_tinycup-custom-link-hover-color'=>'',
+            'nateserk_tinycup-custom-link-visited-color'=>''
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );
