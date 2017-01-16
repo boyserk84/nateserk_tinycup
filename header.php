@@ -76,7 +76,7 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 			if ( !empty($headerImage) ) :
 		?>
 			<div class="container-fluid" style="margin-bottom:35px;"><!--container-fluid header image-->
-				<img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" class="img-thumbnail"/>
+				<img src="<?php echo $headerImage; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" class="img-thumbnail"/>
 			</div><!--container-fluid-->
 		<?php
 			endif;
