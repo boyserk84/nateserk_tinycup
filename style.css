@@ -918,7 +918,7 @@ object {
 	text-decoration: none;
 }
 
-.social-footer {
+.socials, .social-footer {
 	margin-top:15px;
 	margin-bottom:15px;
 }

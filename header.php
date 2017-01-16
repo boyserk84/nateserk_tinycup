@@ -46,8 +46,15 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 				if ( $description || is_customize_preview() ) : ?>
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
-				endif; ?>
+				endif;
+				?>
 			</div><!-- .site-branding -->
+			<div class="container-fluid">
+				<?php
+				// Showing social links
+				do_action('nateserk_tinycup_action_show_social_options');
+				?>
+			</div><!--container-fluid-->
 
 		<div class="container-fluid">
 				<nav class="navbar" role="navigation">
@@ -63,10 +70,16 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 				  </div><!-- navbar-ex1-collapse -->
 				</nav><!--navbar-->
 		</div><!--container-fluid-->
-
 		<?php
-			// Showing social links
-			do_action('nateserk_tinycup_action_show_social_options');
+			// Show a header image
+			$headerImage = get_header_image();
+			if ( !empty($headerImage) ) :
+		?>
+			<div class="container-fluid" style="margin-bottom:35px;"><!--container-fluid header image-->
+				<img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" class="img-thumbnail"/>
+			</div><!--container-fluid-->
+		<?php
+			endif;
 		?>
 		</div><!--row-->
 	</header><!-- #masthead -->

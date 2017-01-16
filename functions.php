@@ -113,7 +113,7 @@ function nateserk_tinycup_scripts() {
 	/*google font */
 	wp_enqueue_style( 'nateserk_tinycup-googleapis', esc_url_raw("https://fonts.googleapis.com/css?family=Fjalla+One"), array(), '1.0.0' , 'screen');
 
-	wp_enqueue_style( 'nateserk_tinycup-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'nateserk_tinycup-style', get_stylesheet_uri(), array(), '1.0.1' );
 
 	/*Font-Awesome-master*/
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/library/font-awesome/css/font-awesome.min.css', array(), '4.7.0' );
