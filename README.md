@@ -20,6 +20,9 @@ End-Users Ready-to-use Customizable Features
 * Social media links
 * Copyright text
 * Article Thumbnail (round, circle, frame)
+* Home-Modal dialog (MOTD, Pop-up)
+* Home-image integration
+* Customizable link colors
 
 Requirement
 ===
