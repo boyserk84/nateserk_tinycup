@@ -37,7 +37,7 @@ if( $options['nateserk_tinycup-home-modal-dialog-toggle'] == true) :
           $txt = $options['nateserk_tinycup-home-modal-dialog-btn-secondary-text'];
           $url = $options['nateserk_tinycup-home-modal-dialog-btn-secondary-url'];
           if ( $options['nateserk_tinycup-home-modal-dialog-btn-secondary-action'] == 'redirect' ) : ?>
-              <a class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $txt; ?></a>
+              <a id="modal_btn_redirect" class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $txt; ?></a>
           <?php
           else : ?>
               <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $txt; ?></button>
@@ -47,7 +47,7 @@ if( $options['nateserk_tinycup-home-modal-dialog-toggle'] == true) :
           $txt = $options['nateserk_tinycup-home-modal-dialog-btn-primary-text'];
           $url = $options['nateserk_tinycup-home-modal-dialog-btn-primary-url'];
           if ( $options['nateserk_tinycup-home-modal-dialog-btn-primary-action'] == 'redirect' ) : ?>
-              <a class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $txt; ?></a>
+              <a id="modal_btn_redirect" class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $txt; ?></a>
           <?php
           else : ?>
               <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $txt; ?></button>

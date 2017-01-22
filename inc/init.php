@@ -70,7 +70,10 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             /** Link colors **/
             'nateserk_tinycup-custom-link-color'=>'',
             'nateserk_tinycup-custom-link-hover-color'=>'',
-            'nateserk_tinycup-custom-link-visited-color'=>''
+            'nateserk_tinycup-custom-link-visited-color'=>'',
+
+            /** Google Analytics */
+            'nateserk_tinycup-g-analytic-tracking-id'=>''
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );
