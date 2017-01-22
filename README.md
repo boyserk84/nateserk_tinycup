@@ -13,6 +13,10 @@ Libraries Included
 * Google Fonts
 * Bootstrap CSS
 
+Current Version
+===
+Version 1.0.1 Updated 01/21/2017
+
 End-Users Ready-to-use Customizable Features
 ===
 * Logo as a title
@@ -23,6 +27,7 @@ End-Users Ready-to-use Customizable Features
 * Home-Modal dialog (MOTD, Pop-up)
 * Home-image integration
 * Customizable link colors
+* Misc-Option (Google Analytic Tracking Id Integration)
 
 Requirement
 ===
