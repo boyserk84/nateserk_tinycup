@@ -15,6 +15,14 @@ $( document ).ready(
         Cookies.set( KEY, true )
         $('#splah_index_modal').modal('show');
       }//if--check cookie
+
+      // Reset cookies if the redirect button on the modal dialog is clicked.
+      $("#modal_btn_redirect").on('click',
+        function () {
+          var keyToRemove = KEY;
+          Cookies.remove( keyToRemove );
+        }//callback
+      );//--#model_btn_redirect
     }//if--check div
   }//func
 );
