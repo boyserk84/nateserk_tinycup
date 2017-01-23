@@ -17,6 +17,7 @@ Current Version
 ===
 Version 1.0.1p Updated 01/22/2017
 * Misc Option: Either show a full text or logo of the theme.
+* Fixed the widget area not blurred out issue when the home modal dialog is displaying.
 
 Version 1.0.1 Updated 01/21/2017
 * Fixed the issue with cookies not being reset if redirect out of the website from the home modal dialog.
@@ -58,15 +59,15 @@ Developing Custom Options Guide
 
 4.) Integrate and trigger your hook
 
-How to install this theme for Wordpress website?
+How to install NateSerk TinyCup theme for Wordpress website?
 ===
 * Run the following command:
-
 `
 sh zip_theme.sh
 `
 
-This will generate a zip file of this theme. It is located in `export` folder.
+This will generate a zip file of this theme. It is located in `export` folder on your computer.
+
 
 * Log-in to your Wordpress website.
 
