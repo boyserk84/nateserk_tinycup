@@ -57,3 +57,23 @@ Developing Custom Options Guide
 3.) Register your options
 
 4.) Integrate and trigger your hook
+
+How to install this theme for Wordpress website?
+===
+* Run the following command:
+`
+sh zip_theme.sh
+`
+This will generate a zip file of this theme. It is located in `export` folder.
+
+* Log-in to your Wordpress website.
+
+* Navigate to Appearance > Themes within your site’s WordPress dashboard.
+
+* Click the ‘Add New‘ button at the top of the page.
+
+* Then click the ‘Upload‘ button at the top of the page.
+
+* Choose the .zip file of your Organic Theme from your computer and click ‘Install Now.
+
+* Activate your theme when ready.
