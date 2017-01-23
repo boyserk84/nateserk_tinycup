@@ -8,7 +8,7 @@ Version: 1.0.1.p
 License: GNU General Public License v3 or later
 License URI: LICENSE
 Text Domain: nateserk_tinycup
-Tags: minimalist
+Tags: minimalist, clean
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -923,7 +923,8 @@ object {
 	margin-bottom:15px;
 }
 
-body.modal-open #main, body.modal-open #masthead{
+/** Blur out while modal dialog is displaying. */
+body.modal-open #main, body.modal-open #masthead, body.modal-open .widget-area{
     -webkit-filter: blur(5px) grayscale(90%);
 }
 
