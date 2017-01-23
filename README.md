@@ -61,9 +61,11 @@ Developing Custom Options Guide
 How to install this theme for Wordpress website?
 ===
 * Run the following command:
+
 `
 sh zip_theme.sh
 `
+
 This will generate a zip file of this theme. It is located in `export` folder.
 
 * Log-in to your Wordpress website.
@@ -74,6 +76,6 @@ This will generate a zip file of this theme. It is located in `export` folder.
 
 * Then click the ‘Upload‘ button at the top of the page.
 
-* Choose the .zip file of your Organic Theme from your computer and click ‘Install Now.
+* Choose the .zip file of this theme from `export` folder on your computer and click ‘Install Now.
 
 * Activate your theme when ready.
