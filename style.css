@@ -1035,3 +1035,14 @@ transform:translatey(0);
 -webkit-transition-delay:.2s;
 transition-delay:.2s;
 }
+
+/*--------------------------------------------------------------
+## mc4wp submit button (customized for wc4wp plugin) --mailchimp
+--------------------------------------------------------------*/
+.mc4wp-form input[type="submit"] {
+		background: #F62459;
+		color: #fff;
+		cursor: pointer;
+		font-size: 1.0em;
+		margin-left: 5px;
+}
