@@ -17,6 +17,7 @@ Current Version
 ===
 Version 1.0.1p Updated 01/22/2017
 * Misc Option: Either show a full text or logo of the theme.
+
 Version 1.0.1 Updated 01/21/2017
 * Fixed the issue with cookies not being reset if redirect out of the website from the home modal dialog.
 
@@ -45,6 +46,7 @@ Where things are
 * init.php - Initialization of the theme
 * customizer.php - Register options for end-user's customizable UI.
 * template-parts/ - PHP/HTML reusable templates for single.php, header.php, footer.php, and page.php.
+* assets/ - All the external library, css, and js files, including the main one.
 
 Developing Custom Options Guide
 ===
