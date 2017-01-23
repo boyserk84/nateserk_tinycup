@@ -60,3 +60,26 @@ if ( ! function_exists( 'nateserk_tinycup_set_copyright_text' ) ) :
 
 endif;
 add_action( 'nateserk_tinycup_action_copyright', 'nateserk_tinycup_set_copyright_text', 0 );
+
+/**
+ * Display a theme logo or text
+ *
+ * @param null
+ * @return null
+ *
+ */
+if ( ! function_exists( 'nateserk_tinycup_show_theme_logo' ) ) :
+    function nateserk_tinycup_show_theme_logo() {
+      $options = nateserk_tinycup_get_theme_options();
+      if ( $options['nateserk_tinycup-show-engine-option'] == 'text') :
+        // show full text ?>
+      <p><?php printf( esc_html__( 'Design and Powered By: %1$s.', 'nateserk_tinycup' ), '<a href="https://automattic.com/" rel="designer">NateSerk TinyCup</a>' ); ?></p>
+      <?php else :
+        // show logo ?>
+      <p>Powered By<br/><a href="https://automattic.com/" rel="designer"><i class="fa fa-coffee fa-3x" aria-hidden="true"></i><br/><span style="font-size:small;">TinyCup Theme</span></a></p>
+      <?php
+      endif;
+    }
+
+endif;
+add_action( 'nateserk_tinycup_action_show_theme_logo', 'nateserk_tinycup_show_theme_logo', 0 );

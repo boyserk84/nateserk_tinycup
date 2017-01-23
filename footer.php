@@ -33,8 +33,8 @@
 		<div class="col-md-12 site-info">
 			<?php
 			do_action('nateserk_tinycup_action_copyright');
+			do_action('nateserk_tinycup_action_show_theme_logo');
 			?>
-			<p><?php printf( esc_html__( 'Design and Powered By: %1$s.', 'nateserk_tinycup' ), '<a href="https://automattic.com/" rel="designer">NateSerk TinyCup</a>' ); ?></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
