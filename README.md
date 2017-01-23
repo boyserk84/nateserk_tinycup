@@ -15,7 +15,10 @@ Libraries Included
 
 Current Version
 ===
+Version 1.0.1p Updated 01/22/2017
+* Misc Option: Either show a full text or logo of the theme.
 Version 1.0.1 Updated 01/21/2017
+* Fixed the issue with cookies not being reset if redirect out of the website from the home modal dialog.
 
 End-Users Ready-to-use Customizable Features
 ===
@@ -27,7 +30,7 @@ End-Users Ready-to-use Customizable Features
 * Home-Modal dialog (MOTD, Pop-up)
 * Home-image integration
 * Customizable link colors
-* Misc-Option (Google Analytic Tracking Id Integration)
+* Misc-Option (Google Analytic Tracking Id Integration, how to show theme logo)
 
 Requirement
 ===
