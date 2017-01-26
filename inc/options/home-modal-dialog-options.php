@@ -20,7 +20,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( $TOGGLE_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$TOGGLE_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox'
 ) );
 
 $wp_customize->add_control( $TOGGLE_ID, array(
@@ -39,7 +39,7 @@ $DISMISS_OUTSIDE_KEY = 'nateserk_tinycup-home-modal-dialog-dismiss-outside-allow
 $wp_customize->add_setting( $DISMISS_OUTSIDE_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$DISMISS_OUTSIDE_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox'
 ) );
 
 $wp_customize->add_control( $DISMISS_OUTSIDE_ID, array(
@@ -57,7 +57,8 @@ $TITLE_KEY = 'nateserk_tinycup-home-modal-dialog-title';
 /* Title */
 $wp_customize->add_setting( $TITLE_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$TITLE_KEY]
+    'default'			=> $defaults[$TITLE_KEY],
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 $wp_customize->add_control( $TITLE_ID, array(
     'label'		=> __( 'Title', 'nateserk_tinycup' ),
@@ -73,7 +74,8 @@ $BODY_KEY = 'nateserk_tinycup-home-modal-dialog-body';
 /* Body */
 $wp_customize->add_setting( $BODY_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$BODY_KEY]
+    'default'			=> $defaults[$BODY_KEY],
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 $wp_customize->add_control( $BODY_ID, array(
     'label'		=> __( 'Body', 'nateserk_tinycup' ),
@@ -89,7 +91,8 @@ $BTN_PRIMARY_TXT_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-home-moda
 $BTN_PRIMARY_TXT_KEY = 'nateserk_tinycup-home-modal-dialog-btn-primary-text';
 $wp_customize->add_setting( $BTN_PRIMARY_TXT_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$BTN_PRIMARY_TXT_KEY]
+    'default'			=> $defaults[$BTN_PRIMARY_TXT_KEY],
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 $wp_customize->add_control( $BTN_PRIMARY_TXT_ID, array(
     'label'		=> __( 'Primary Button Text', 'nateserk_tinycup' ),
@@ -105,7 +108,8 @@ $BTN_PRIMARY_URL_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-home-moda
 $BTN_PRIMARY_URL_KEY = 'nateserk_tinycup-home-modal-dialog-btn-primary-url';
 $wp_customize->add_setting( $BTN_PRIMARY_URL_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$BTN_PRIMARY_URL_KEY]
+    'default'			=> $defaults[$BTN_PRIMARY_URL_KEY],
+    'sanitize_callback' => 'esc_url_raw'
 ) );
 $wp_customize->add_control( $BTN_PRIMARY_URL_ID, array(
     'label'		=> __( 'Primary Button URL', 'nateserk_tinycup' ),
@@ -139,7 +143,8 @@ $BTN_SEC_TXT_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-home-modal-di
 $BTN_SEC_TXT_KEY = 'nateserk_tinycup-home-modal-dialog-btn-secondary-text';
 $wp_customize->add_setting( $BTN_SEC_TXT_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$BTN_SEC_TXT_KEY]
+    'default'			=> $defaults[$BTN_SEC_TXT_KEY],
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 $wp_customize->add_control( $BTN_SEC_TXT_ID, array(
     'label'		=> __( 'Secondary Button Text', 'nateserk_tinycup' ),
@@ -154,7 +159,8 @@ $BTN_SEC_URL_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-home-modal-di
 $BTN_SEC_URL_KEY = 'nateserk_tinycup-home-modal-dialog-btn-secondary-url';
 $wp_customize->add_setting( $BTN_SEC_URL_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$BTN_SEC_URL_KEY]
+    'default'			=> $defaults[$BTN_SEC_URL_KEY],
+    'sanitize_callback' => 'esc_url_raw'
 ) );
 $wp_customize->add_control( $BTN_SEC_URL_ID, array(
     'label'		=> __( 'Secondary Button URL', 'nateserk_tinycup' ),

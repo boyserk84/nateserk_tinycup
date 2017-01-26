@@ -19,7 +19,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( $TOGGLE_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$TOGGLE_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox'
 ) );
 
 $wp_customize->add_control( $TOGGLE_ID, array(
@@ -57,7 +57,7 @@ $QTY_KEY = 'nateserk_tinycup-related-posts-per-page';
 $wp_customize->add_setting( $QTY_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$QTY_KEY],
-    //'sanitize_callback' => 'esc_url_raw', // TODO: need to sanitize input
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_number'
 ) );
 $wp_customize->add_control( $QTY_ID, array(
     'label'		=> __( 'Show Per Page ', 'nateserk_tinycup' ),

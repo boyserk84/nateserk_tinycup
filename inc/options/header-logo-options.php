@@ -20,7 +20,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( $TOGGLE_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$TOGGLE_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
 ) );
 
 $wp_customize->add_control( $TOGGLE_ID, array(
@@ -39,8 +39,8 @@ $TYPE_KEY = 'nateserk_tinycup-header-logo-media-url';
 /* Image to show */
 $wp_customize->add_setting( $TYPE_ID, array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults[$TYPE_KEY],
-    //'sanitize_callback' => 'esc_url_raw', // TODO: Need to sanitize input
+    'default'			=> $defaults[$TYPE_KEY]//,
+    //'sanitize_callback' => 'esc_url_raw'
 ) );
 
 $wp_customize->add_control(

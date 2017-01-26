@@ -21,7 +21,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( $G_TRACKING_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$G_TRACKING_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 
 $wp_customize->add_control( $G_TRACKING_ID, array(
@@ -36,7 +36,7 @@ $wp_customize->add_control( $G_TRACKING_ID, array(
 $POWER_BY_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-show-engine-option]';
 $POWER_BY_KEY = 'nateserk_tinycup-show-engine-option';
 
-/* Google Analytic tracking Id*/
+/* How to display a theme logo*/
 $wp_customize->add_setting( $POWER_BY_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$POWER_BY_KEY],

@@ -20,7 +20,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( $TOGGLE_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$TOGGLE_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 
 $wp_customize->add_control( $TOGGLE_ID, array(

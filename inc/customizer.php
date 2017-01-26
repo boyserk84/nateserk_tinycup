@@ -22,6 +22,10 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
 	/* Retrieve 'defaults' options*/
 	$defaults = nateserk_tinycup_get_default_theme_options();
 
+  /** Load input sanitizer functions */
+  $sanitize_func_file_path = nateserk_tinycup_file_directory('inc/sanitize-functions.php');
+  require $sanitize_func_file_path;
+
 	/** Social Media Options */
 	$social_options_file_path = nateserk_tinycup_file_directory('inc/options/social-options.php');
 	require $social_options_file_path;

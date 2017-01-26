@@ -17,7 +17,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( 'nateserk_tinycup_theme_options[nateserk_tinycup-enable-social]', array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults['nateserk_tinycup-enable-social'],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox'
 ) );
 
 $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-enable-social]', array(

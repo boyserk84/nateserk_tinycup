@@ -21,7 +21,7 @@ $wp_customize->add_section( $SECTION_NAME, array(
 $wp_customize->add_setting( $LINK_MAIN_COLOR_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$LINK_MAIN_COLOR_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'sanitize_hex_color'
 ) );
 
 $wp_customize->add_control( $LINK_MAIN_COLOR_ID, array(
@@ -39,7 +39,7 @@ $LINK_HOVER_COLOR_KEY = 'nateserk_tinycup-custom-link-hover-color';
 $wp_customize->add_setting( $LINK_HOVER_COLOR_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$LINK_HOVER_COLOR_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'sanitize_hex_color'
 ) );
 
 $wp_customize->add_control( $LINK_HOVER_COLOR_ID, array(
@@ -57,7 +57,7 @@ $LINK_VISITED_COLOR_KEY = 'nateserk_tinycup-custom-link-visited-color';
 $wp_customize->add_setting( $LINK_VISITED_COLOR_ID, array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults[$LINK_VISITED_COLOR_KEY],
-    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+    'sanitize_callback' => 'sanitize_hex_color'
 ) );
 
 $wp_customize->add_control( $LINK_VISITED_COLOR_ID, array(
