@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying archive pages (Listing by cateogry or tags)
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -34,9 +34,18 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
-
-			the_posts_navigation();
-
+			// showing a custom pagination
+			$custom_args = array(
+				'prev_text' => '<span class="col-xs-12 col-md-12 style="text-align:center;"><i class="fa fa-chevron-circle-left fa-5x" aria-hidden="true"></i><h2>More Contents</h2></span>',
+				'next_text' => '<span class="col-xs-12 col-md-12" style="text-align:center;"><i class="fa fa-chevron-circle-right fa-5x" aria-hidden="true"></i><h2>Newer Contents</h2></span>'
+			);
+			?>
+			<div class="col-xs-12 col-md-12">
+			<?php
+			the_posts_navigation( $custom_args );	// Show all posts
+			?>
+			</div>
+			<?php
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
