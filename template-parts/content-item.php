@@ -1,7 +1,7 @@
 <?php
 /**
 * content-item.php
-* Template for displaying items (i.e. post or page) within a page or post.
+* Template for displaying each item (i.e. post or page) within a page or post.
 * i.e. showing all posts on the index page.
 */
 ?>
