@@ -22,9 +22,15 @@ $custom_args = array(
   'prev_text' => '<span class="col-xs-12 col-md-12 style="text-align:center;"><i class="fa fa-chevron-circle-left fa-5x" aria-hidden="true"></i><h2>More Contents</h2></span>',
   'next_text' => '<span class="col-xs-12 col-md-12" style="text-align:center;"><i class="fa fa-chevron-circle-right fa-5x" aria-hidden="true"></i><h2>Newer Contents</h2></span>'
 );
-?>
-<div class="col-xs-12 col-md-12">
-<?php
-the_posts_navigation( $custom_args );	// Show all posts
+// Check if there is any pagination
+if ( get_previous_posts_link() || get_next_posts_link() ) :
+  ?>
+  <div class="col-xs-12 col-md-12">
+  <?php
+  the_posts_navigation( $custom_args );	// Show all posts
+  ?>
+  </div>
+  <?php
+endif;
 ?>
 </div>
