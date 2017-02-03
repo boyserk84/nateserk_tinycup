@@ -43,7 +43,7 @@ if ( !function_exists('nateserk_tinycup_related_post_below') ) :
                     <?php
                     if ( $isCategory == false )
                     {
-                        //tags
+                        // tags
                         $post_args = array(
                             'tag__in'            => $items_ids,
                             'post__not_in'       => array($post_id),
@@ -67,7 +67,7 @@ if ( !function_exists('nateserk_tinycup_related_post_below') ) :
                     $featured_query = new WP_Query( $post_args );
 
                     while ( $featured_query->have_posts() ) : $featured_query->the_post();
-                        get_template_part( 'template-parts/content-related', 'related' );
+                        get_template_part( 'template-parts/content', 'related' );
                     endwhile;
                     wp_reset_query();
                     ?>
