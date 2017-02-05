@@ -15,6 +15,12 @@ Libraries Included
 
 Current Version
 ===
+Version 1.0.1p2 Updated 02/04/2017
+* Be able to customize how many items displayed per row.
+* Fixed pagination issue.
+* Added input sanitizer and validator for customizable UI.
+* Shell script for update theme manually on the server.
+
 Version 1.0.1p Updated 01/22/2017
 * Misc Option: Either show a full text or logo of the theme.
 * Fixed the widget area not blurred out issue when the home modal dialog is displaying.
@@ -33,6 +39,7 @@ End-Users Ready-to-use Customizable Features
 * Home-image integration
 * Customizable link colors
 * Misc-Option (Google Analytic Tracking Id Integration, how to show theme logo)
+* Customize displaying number of items per row.
 
 Requirement
 ===
@@ -80,3 +87,35 @@ This will generate a zip file of this theme. It is located in `export` folder on
 * Choose the .zip file of this theme from `export` folder on your computer and click ‘Install Now.
 
 * Activate your theme when ready.
+
+
+How to update a newer version of NateSerk TinyCup theme?
+===
+It is similar to install the theme. There are 2 options.
+
+Option#1: Use a shell script `update_theme.sh`
+===
+
+* FTP or copy the theme's zip file to your Wordpress directory on the server at `wp-content/themes`.
+
+* Run the following command:
+`
+sh update_theme.sh
+`
+
+This will make a backup the current theme version and unzip the new theme's zip file.
+
+Options#2
+===
+
+* SSH or FTP to your Wordpress directory on the server at `wp-content/themes`
+
+* Make a backup of the current theme or run the following command:
+
+`
+sudo mv nateserk_tinycup nateserk_tinycup_BACKUP
+`
+
+This will make a backup of the current theme into `nateserk_tinycup_BACKUP` directory.
+
+* Log-in to your Wordpress website and upload the newer version of the theme.
