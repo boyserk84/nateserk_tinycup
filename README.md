@@ -69,9 +69,9 @@ Developing Custom Options Guide
 How to install NateSerk TinyCup theme for Wordpress website?
 ===
 * Run the following command:
-`
+```
 sh zip_theme.sh
-`
+```
 
 This will generate a zip file of this theme. It is located in `export` folder on your computer.
 
@@ -93,28 +93,28 @@ How to update a newer version of NateSerk TinyCup theme?
 ===
 It is similar to install the theme. There are 2 options.
 
-Option#1: Use a shell script `update_theme.sh`
+Option#1: Use a shell script.
 ===
 
 * FTP or copy the theme's zip file to your Wordpress directory on the server at `wp-content/themes`.
 
 * Run the following command:
-`
+```
 sh update_theme.sh
-`
+```
 
-This will make a backup the current theme version and unzip the new theme's zip file.
+This will make a backup of the current theme version and unzip the new theme's zip file.
 
-Options#2
+Options#2 Update via Wordpress admin.
 ===
 
 * SSH or FTP to your Wordpress directory on the server at `wp-content/themes`
 
 * Make a backup of the current theme or run the following command:
 
-`
+```
 sudo mv nateserk_tinycup nateserk_tinycup_BACKUP
-`
+```
 
 This will make a backup of the current theme into `nateserk_tinycup_BACKUP` directory.
 
