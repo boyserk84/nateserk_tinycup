@@ -76,7 +76,9 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-g-analytic-tracking-id'=>'',
 
             /** How to show theme logo at the footer*/
-            'nateserk_tinycup-show-engine-option'=>'text'
+            'nateserk_tinycup-show-engine-option'=>'text',
+
+            'nateserk_tinycup-show-per-row'=>4
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );

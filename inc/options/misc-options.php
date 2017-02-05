@@ -30,7 +30,7 @@ $wp_customize->add_control( $G_TRACKING_ID, array(
     'description'=> __('Your Google Analytic Track Id. This is can be found under \'Tracking Code\'. '),
     'settings'  => $G_TRACKING_ID,
     'type'	  	=> 'text',
-    'priority'  => 14
+    'priority'  => 16
 ) );
 
 $POWER_BY_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-show-engine-option]';
@@ -44,11 +44,31 @@ $wp_customize->add_setting( $POWER_BY_ID, array(
 ) );
 
 $wp_customize->add_control( $POWER_BY_ID, array(
-    'label'		=> __( 'Show Theme Trademark', 'nateserk_tinycup' ),
+    'label'		=> __( 'Theme Trademark', 'nateserk_tinycup' ),
     'section'   => $SECTION_NAME,
     'description'=> __('How do you want our theme logo to show up at the footer?.'),
     'settings'  => $POWER_BY_ID,
     'type'	  	=> 'select',
     'choices'   => array('text'=>'text', 'logo'=>'logo'),
     'priority'  => 15
+) );
+
+$SHOW_PER_ROW_BY_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-show-per-row]';
+$SHOW_PER_ROW_BY_KEY = 'nateserk_tinycup-show-per-row';
+
+/* How to display a theme logo*/
+$wp_customize->add_setting( $SHOW_PER_ROW_BY_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$SHOW_PER_ROW_BY_KEY],
+    'sanitize_callback' => 'nateserk_tinycup_sanitize_number'
+) );
+
+$wp_customize->add_control( $SHOW_PER_ROW_BY_ID, array(
+    'label'		=> __( 'Posts Per Row', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('How many items/posts showing per row in the listing?.'),
+    'settings'  => $SHOW_PER_ROW_BY_ID,
+    'type'	  	=> 'select',
+    'choices'   => array('4'=>4, '3'=>3, '2'=>2, '1'=>1),
+    'priority'  => 14
 ) );

@@ -7,8 +7,11 @@
  * @package nateserk-tinycup
  */
 
+$options = nateserk_tinycup_get_theme_options();
+$perRow = $options['nateserk_tinycup-show-per-row'];
+$divVal = "col-xs-12 col-md-" .(12/$perRow);
 ?>
-<div class="col-xs-12 col-md-3">
+<div class="<?php echo $divVal; ?>">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
