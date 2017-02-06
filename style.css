@@ -757,6 +757,32 @@ a:active {
 	max-width: 100%;
 }
 
+.widget_archive ul,
+.widget_categories ul{
+	list-style: none;
+	text-align: justify;
+	margin-right:5%;
+	margin-left:2%;
+}
+.widget_recent_comments ul,
+.widget_meta ul,
+.widget_recent_entries ul{
+	list-style: none;
+}
+
+.widget_archive ul li,
+.widget_categories ul li,
+.widget_meta ul li{
+	display: inline;
+	margin-right: 20px;
+}
+
+.widget_calendar {
+	text-align: center;
+	margin-left: 2%;
+}
+
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

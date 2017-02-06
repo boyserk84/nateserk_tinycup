@@ -82,6 +82,14 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 			endif;
 		?>
 		</div><!--row-->
+		<?php
+		// header widget
+		if ( is_active_sidebar( 'sidebar-header' ) ) : ?>
+		<aside id="secondary" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-header' ); ?>
+		</aside><!-- #secondary -->
+		<?php
+		endif;?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
