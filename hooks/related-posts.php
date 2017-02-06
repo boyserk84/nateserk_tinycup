@@ -30,50 +30,53 @@ if ( !function_exists('nateserk_tinycup_related_post_below') ) :
             foreach ($items as $item) {
                 $items_ids[] = $item->term_id;
             }
-            ?>
-            <div class="related-post-wrapper">
-              <div class="col-md-3" style="text-align:left;">
-                <h3>
-                    <span><?php _e('You may also like...', 'nateserk_tinycup'); ?></span>
-                </h3>
-              </div>
-              <div class="col-md-9"><hr width="100%"></div>
-              <div class="clearfix"></div>
-                <div class="featured-entries-col masonry-start featured-related-posts">
-                    <?php
-                    if ( $isCategory == false )
-                    {
-                        // tags
-                        $post_args = array(
-                            'tag__in'            => $items_ids,
-                            'post__not_in'       => array($post_id),
-                            'post_type'          => 'post',
-                            'posts_per_page'     => $show_per_page,
-                            'post_status'        => 'publish',
-                            'ignore_sticky_posts'=> true
-                        );
-                    } else {
-                        // category
-                        $post_args = array(
-                            'category__in'       => $items_ids,
-                            'post__not_in'       => array($post_id),
-                            'post_type'          => 'post',
-                            'posts_per_page'     => $show_per_page,
-                            'post_status'        => 'publish',
-                            'ignore_sticky_posts'=> true
-                        );
-                    }
+            if ( $isCategory == false )
+            {
+                // tags
+                $post_args = array(
+                    'tag__in'            => $items_ids,
+                    'post__not_in'       => array($post_id),
+                    'post_type'          => 'post',
+                    'posts_per_page'     => $show_per_page,
+                    'post_status'        => 'publish',
+                    'ignore_sticky_posts'=> true
+                );
+            } else {
+                // category
+                $post_args = array(
+                    'category__in'       => $items_ids,
+                    'post__not_in'       => array($post_id),
+                    'post_type'          => 'post',
+                    'posts_per_page'     => $show_per_page,
+                    'post_status'        => 'publish',
+                    'ignore_sticky_posts'=> true
+                );
+            }
 
-                    $featured_query = new WP_Query( $post_args );
-
-                    while ( $featured_query->have_posts() ) : $featured_query->the_post();
-                        get_template_part( 'template-parts/content', 'related' );
-                    endwhile;
-                    wp_reset_query();
-                    ?>
+            $featured_query = new WP_Query( $post_args );
+            if ( $featured_query->have_posts() ) :
+              ?>
+              <div class="related-post-wrapper">
+                <div class="col-md-3" style="text-align:left;">
+                  <h3>
+                      <span><?php _e('You may also like...', 'nateserk_tinycup'); ?></span>
+                  </h3>
                 </div>
+                <div class="col-md-9"><hr width="100%"></div>
                 <div class="clearfix"></div>
-            </div>
+                  <div class="featured-entries-col masonry-start featured-related-posts">
+            <?php
+            while ( $featured_query->have_posts() ) : $featured_query->the_post();
+                get_template_part( 'template-parts/content', 'related' );
+            endwhile;
+            ?>
+                  </div><!--.feature-entries-col-->
+            <?php
+          endif;
+          wp_reset_query();
+          ?>
+            <div class="clearfix"></div>
+            </div><!--.related-post-wrapper-->
             <?php
         }
     }
