@@ -32,7 +32,7 @@
     echo get_the_post_thumbnail( null, $tb_size, $tb_attr);
   } else {
     ?>
-    <div class="<?php echo $class_value;?>" style="width:100%; height:300px;"/>
+    <div class="<?php echo $class_value;?>" style="width:100%; height:300px;"></div>
     <?php
   }
 ?>
