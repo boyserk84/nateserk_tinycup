@@ -69,3 +69,56 @@ $wp_customize->add_control( $FBAPP_NUM_POSTS_ID, array(
     'type'	  	=> 'text',
     'priority'  => 18
 ) );
+
+/** Show FB Like Options */
+$FBAPP_LIKE_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup_fbapp_social_like_enable]';
+$FBAPP_LIKE_KEY = 'nateserk_tinycup_fbapp_social_like_enable';
+$wp_customize->add_setting( $FBAPP_LIKE_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$FBAPP_LIKE_KEY]
+) );
+
+$wp_customize->add_control( $FBAPP_LIKE_ID, array(
+    'label'		=> __( 'Enable Facebook Like.', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('Show Facebook Like on each post.'),
+    'settings'  => $FBAPP_LIKE_ID,
+    'type'	  	=> 'checkbox',
+    'priority'  => 19
+) );
+
+/** Show Share Options */
+$FBAPP_LIKE_SHARE_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup_fbapp_social_like_include_share]';
+$FBAPP_LIKE_SHARE_KEY = 'nateserk_tinycup_fbapp_social_like_include_share';
+$wp_customize->add_setting( $FBAPP_LIKE_SHARE_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$FBAPP_LIKE_SHARE_KEY]
+) );
+
+$wp_customize->add_control( $FBAPP_LIKE_SHARE_ID, array(
+    'label'		=> __( 'Enable Facebook Share.', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __("Show Facebook share on each post. NOTE: 'Facebook Like' must be enabled."),
+    'settings'  => $FBAPP_LIKE_SHARE_ID,
+    'type'	  	=> 'checkbox',
+    'priority'  => 20
+) );
+
+
+/** Show FB Social Like Layout Options */
+$FBAPP_LIKE_SHARE_LAYOUT_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup_fbapp_social_like_layout]';
+$FBAPP_LIKE_SHARE_LAYOUT_KEY = 'nateserk_tinycup_fbapp_social_like_layout';
+$wp_customize->add_setting( $FBAPP_LIKE_SHARE_LAYOUT_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$FBAPP_LIKE_SHARE_LAYOUT_KEY]
+) );
+
+$wp_customize->add_control( $FBAPP_LIKE_SHARE_LAYOUT_ID, array(
+    'label'		=> __( 'Facebook Like Button Layout', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __("Layout for Like and Share Buttons."),
+    'settings'  => $FBAPP_LIKE_SHARE_LAYOUT_ID,
+    'type'	  	=> 'select',
+    'choices'   => array('button_count'=>'button_count', 'box_count'=>'box_count','standard'=>'standard', 'button'=>'button'),
+    'priority'  => 21
+) );

@@ -38,6 +38,7 @@
 
 	<div class="col-md-12 entry-content">
 		<?php
+			do_action('nateserk_tinycup_show_external_share_options');
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'nateserk_tinycup' ), array( 'span' => array( 'class' => array() ) ) ),

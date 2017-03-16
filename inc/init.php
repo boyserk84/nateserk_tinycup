@@ -83,7 +83,10 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             /** Facebook App Id */
             'nateserk_tinycup-fbapp_Id'=>'',
             'nateserk_tinycup-fbapp_social_comment_enable'=>false,
-            'nateserk_tinycup-fbapp_social_comment_numposts'=>5
+            'nateserk_tinycup-fbapp_social_comment_numposts'=>5,
+            'nateserk_tinycup_fbapp_social_like_enable'=>false,
+            'nateserk_tinycup_fbapp_social_like_layout'=>'button_count',
+            'nateserk_tinycup_fbapp_social_like_include_share'=> true
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );
@@ -130,3 +133,6 @@ require $nateserk_tinycup_social_links_file_path;
 
 $nateserk_tinycup_related_posts_file_path = nateserk_tinycup_file_directory('hooks/related-posts.php');
 require $nateserk_tinycup_related_posts_file_path;
+
+$nateserk_tinycup_plugins_file_path = nateserk_tinycup_file_directory('hooks/plugins.php');
+require $nateserk_tinycup_plugins_file_path;
