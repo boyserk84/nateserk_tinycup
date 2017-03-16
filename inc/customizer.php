@@ -58,6 +58,10 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
   $misc_options_file_path = nateserk_tinycup_file_directory('inc/options/misc-options.php');
   require $misc_options_file_path;
 
+  /** External plugins options */
+  $plugins_options_file_path = nateserk_tinycup_file_directory('inc/options/plugins-options.php');
+  require $plugins_options_file_path;
+
 }
 add_action( 'customize_register', 'nateserk_tinycup_customize_register' );
 

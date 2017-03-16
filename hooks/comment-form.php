@@ -26,3 +26,31 @@ if ( !function_exists('nateserk_tinycup_comment_form') ) :
 endif;
 
 add_filter('comment_form_defaults', 'nateserk_tinycup_comment_form');
+
+/**
+ * Show FB Social Comment Plugins
+ *
+ *
+ * @param array $form
+ * @return array $form
+ *
+ */
+if ( !function_exists('nateserk_tinycup_fb_social_comment_form') ) :
+
+    function nateserk_tinycup_fb_social_comment_form($fbId,$url,$width, $numposts) {
+      ?>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=<?php echo $fbId; ?>";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="fb-comments" data-href="<?php echo $url; ?>" data-width="<?php echo $width; ?>" data-numposts="<?php echo $numposts; ?>"></div>
+      <?
+    }
+
+endif;
+
+add_action('nateserk_tinycup_action_fbapp_social_comment', 'nateserk_tinycup_fb_social_comment_form', 0, 4);

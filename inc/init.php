@@ -78,7 +78,12 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             /** How to show theme logo at the footer*/
             'nateserk_tinycup-show-engine-option'=>'text',
 
-            'nateserk_tinycup-show-per-row'=>4
+            'nateserk_tinycup-show-per-row'=>4,
+
+            /** Facebook App Id */
+            'nateserk_tinycup-fbapp_Id'=>'',
+            'nateserk_tinycup-fbapp_social_comment_enable'=>false,
+            'nateserk_tinycup-fbapp_social_comment_numposts'=>5
         );
 
         return apply_filters( 'natekserk_tinycup_default_theme_options', $default_theme_options );
