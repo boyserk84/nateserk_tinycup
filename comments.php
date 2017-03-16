@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 	$options = nateserk_tinycup_get_theme_options();
 	// Check if FB Social comments plug in is turned on.
 	$enableFBComment = (!empty($options['nateserk_tinycup-fbapp_Id']) && $options['nateserk_tinycup-fbapp_social_comment_enable'] == true);
-	if ( $enableFBComment ) :
+	if ( $enableFBComment && comments_open()) :
 		// Facebook Comment plugin
 		?>
 		<h2 class="comments-title">
