@@ -15,6 +15,9 @@ Libraries Included
 
 Current Version
 ===
+Version 1.0.1p3 Updated 03/16/2017
+* Facebook social sharing options for each post.
+
 Version 1.0.1p2 Updated 02/04/2017
 * Be able to customize how many items displayed per row.
 * Fixed pagination issue.
