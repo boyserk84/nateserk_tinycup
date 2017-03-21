@@ -8,7 +8,7 @@ echo "Zipping 'nateserk_tinycup' theme generated at timestamp=$timestamp \n";
 #     if [ "$2" != "" ]; then
 #       echo "Renaming 'nateserk_tinycup' to $2"
 #       # TODO: Work in progress
-#       grep -rl --exclude-dir=".git" 'nateserk_tinycup' . | xargs sed -i 's/nateserk_tinycup/$2/g'
+#       grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" 'nateserk_tinycup' . | xargs sed -i 's/nateserk_tinycup/$2/g'
 #     else
 #       echo "Invalid --rename parameter. Abort!"
 #       exit
