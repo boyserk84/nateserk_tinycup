@@ -8,7 +8,7 @@ if [ "$1" != "" ]; then
     if [ "$2" != "" ]; then
       echo "[ Running ] Renaming 'nateserk_tinycup' to $2"
       # TODO: Work in progress
-      if [[ "$OSTYPE" == "darwin"* ]];
+      if [[ "$OSTYPE" == "darwin"* ]];  then
         echo "[ Running ] Detecting 'macOSX'. Update 'rename' options. "
         # if running on mac OSX, we need -i '' and -e options.
         # Reference: http://stackoverflow.com/questions/19456518/invalid-command-code-despite-escaping-periods-using-sed
