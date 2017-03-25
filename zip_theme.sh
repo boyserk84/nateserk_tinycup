@@ -7,7 +7,6 @@ if [ "$1" != "" ]; then
   if [ "$1" == "--rename" ]; then
     if [ "$2" != "" ]; then
       echo "[ Running ] Renaming 'nateserk_tinycup' to $2"
-      # TODO: Work in progress
       if [[ "$OSTYPE" == "darwin"* ]];  then
         echo "[ Running ] Detecting 'macOSX'. Update 'rename' options. "
         # if running on mac OSX, we need -i '' and -e options.
@@ -16,6 +15,9 @@ if [ "$1" != "" ]; then
       else
         grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" 'nateserk_tinycup' . | xargs sed -i 's/nateserk_tinycup/'"$2"'/g'
       fi
+      # TODO: Update Style.css
+      sed -f "style.css" -i '' -e 's/Nateserk/'"$2"'/g'
+
     else
       echo "[ Error ] Invalid --rename parameter. Abort!"
       exit
