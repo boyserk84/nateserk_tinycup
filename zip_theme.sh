@@ -2,6 +2,7 @@
 #!/bin/bash
 timestamp=$(date +%s)
 echo "Zipping 'nateserk_tinycup' theme generated at timestamp=$timestamp \n";
+STR_NAME="nateserk_tinycup"
 
 if [ "$1" != "" ]; then
   if [ "$1" == "--rename" ]; then
@@ -27,11 +28,11 @@ if [ "$1" != "" ]; then
     echo "[ Error ] Invalid command. Abort!"
     exit
   fi
+  STR_NAME=$2
 else
   echo "[ Warning ] No argument supplied. Archiving 'nateserk_tinycup.zip"
-  "$2" = "nateserk_tinycup"
 fi
 
-echo "[ Running ] Archiving theme to '"$2"'.zip "
-sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/$2.zip" *
+echo "[ Running ] Archiving theme to '"$STR_NAME"'.zip "
+sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/$STR_NAME.zip" *
 sudo rm ".DS_Store"
