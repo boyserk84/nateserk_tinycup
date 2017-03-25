@@ -15,8 +15,9 @@ if [ "$1" != "" ]; then
       else
         grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" 'nateserk_tinycup' . | xargs sed -i 's/nateserk_tinycup/'"$2"'/g'
       fi
-      # TODO: Update Style.css
-      sed -f "style.css" -i '' -e 's/Nateserk/'"$2"'/g'
+      echo "[ Running ] Replacing content in 'style.css'."
+      # Update content in style.css
+      sed -i '' -e 's/Nateserk Tinycup/'$2'/g' style.css
 
     else
       echo "[ Error ] Invalid --rename parameter. Abort!"
@@ -28,6 +29,7 @@ if [ "$1" != "" ]; then
   fi
 else
   echo "[ Warning ] No argument supplied. Archiving 'nateserk_tinycup.zip"
+  "$2" = "nateserk_tinycup"
 fi
 
 echo "[ Running ] Archiving theme to '"$2"'.zip "
