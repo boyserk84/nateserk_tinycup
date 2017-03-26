@@ -49,7 +49,7 @@ if ( !function_exists('nateserk_tinycup_fb_social_comment_form') ) :
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
       <div class="fb-comments" data-href="<?php echo $url; ?>" data-width="<?php echo $width; ?>" data-numposts="<?php echo $numposts; ?>"></div>
-      <?
+      <?php
     }
 
 endif;
