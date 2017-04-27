@@ -8,7 +8,8 @@
  */
 
 /**
-* [open_modal_video] Create a button for trigger an empty modal dialog.
+* [open_modal_video]
+* Short Code: Create a button for trigger an empty modal dialog.
 */
 if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
 
@@ -29,7 +30,7 @@ if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
             }
           }</style>"
 
-        ."<div class=\"modal fade bs-example-modal-lg\" tabindex=\"-1\" id =\"myModal\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
+        ."<div class=\"modal fade\" tabindex=\"-1\" id =\"myModal\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
           <div class=\"modal-dialog modal-lg\" role=\"document\">
             <div class=\"modal-content\">"
               .$content
