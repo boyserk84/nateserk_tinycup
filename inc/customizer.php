@@ -72,3 +72,39 @@ function nateserk_tinycup_customize_preview_js() {
 	wp_enqueue_script( 'nateserk_tinycup_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'nateserk_tinycup_customize_preview_js' );
+
+
+/**
+* Customize and override the existing gallery short code and styling.
+*/
+function nateserk_tinycup_customize_gallery_shortcode( $output = '', $atts, $instance ) {
+	$return = $output; // fallback
+
+  $idsList = explode(',', $atts["ids"]);
+  $count = count($idsList);
+  $totalCol = isset($atts["columns"])?((int) $atts["columns"]):$count;
+  $size = $atts["size"];
+  $link = isset($atts["link"])?false:true;  // false - link to attachment file, true link to attachment page
+  $col = 1; // how many columns per row
+
+  if ($count <= $totalCol) {
+    $col = floor( 12/$count );
+  } else {
+    $col = floor( 12/$totalCol );
+  }
+
+  $className = "col-md-" .$col;
+
+  $my_result = '';
+	// retrieve content of your own gallery function
+	foreach($idsList as $id) {
+    $my_result = $my_result ."<div class=\"col-xs-12 ".$className ."\">" .wp_get_attachment_link($id, $size, $link) ."</div>";
+  }
+
+	if( !empty( $my_result ) ) {
+		$return = "<div class=\"col-xs-12 col-md-12\">" .$my_result ."</div>";
+	}
+
+	return $return;
+}
+add_filter( 'post_gallery', 'nateserk_tinycup_customize_gallery_shortcode', 10, 3 );
