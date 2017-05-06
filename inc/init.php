@@ -80,6 +80,8 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
 
             'nateserk_tinycup-show-per-row'=>4,
 
+            'nateserk_tinycup-theme-gallery-toggle'=>false,
+
             /** Facebook App Id */
             'nateserk_tinycup-fbapp_Id'=>'',
             'nateserk_tinycup-fbapp_social_comment_enable'=>false,

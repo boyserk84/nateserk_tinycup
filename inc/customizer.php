@@ -80,30 +80,34 @@ add_action( 'customize_preview_init', 'nateserk_tinycup_customize_preview_js' );
 function nateserk_tinycup_customize_gallery_shortcode( $output = '', $atts, $instance ) {
 	$return = $output; // fallback
 
-  $idsList = explode(',', $atts["ids"]);
-  $count = count($idsList);
-  $totalCol = isset($atts["columns"])?((int) $atts["columns"]):$count;
-  $size = $atts["size"];
-  $link = isset($atts["link"])?false:true;  // false - link to attachment file, true link to attachment page
-  $col = 1; // how many columns per row
+  $options = nateserk_tinycup_get_theme_options();
+  // Override only if user enables it via a customizable UI menu.
+  if ($options['nateserk_tinycup-theme-gallery-toggle'] == true ) {
+    $idsList = explode(',', $atts["ids"]);
+    $count = count($idsList);
+    $totalCol = isset($atts["columns"])?((int) $atts["columns"]):$count;
+    $size = $atts["size"];
+    $link = isset($atts["link"])?false:true;  // false - link to attachment file, true link to attachment page
+    $col = 1; // how many columns per row
 
-  if ($count <= $totalCol) {
-    $col = floor( 12/$count );
-  } else {
-    $col = floor( 12/$totalCol );
+    if ($count <= $totalCol) {
+      $col = floor( 12/$count );
+    } else {
+      $col = floor( 12/$totalCol );
+    }
+
+    $className = "col-md-" .$col;
+
+    $my_result = '';
+  	// retrieve content of your own gallery function
+  	foreach($idsList as $id) {
+      $my_result = $my_result ."<div class=\"col-xs-12 ".$className ."\">" .wp_get_attachment_link($id, $size, $link) ."</div>";
+    }
+
+  	if( !empty( $my_result ) ) {
+  		$return = "<div class=\"col-xs-12 col-md-12\">" .$my_result ."</div>";
+  	}
   }
-
-  $className = "col-md-" .$col;
-
-  $my_result = '';
-	// retrieve content of your own gallery function
-	foreach($idsList as $id) {
-    $my_result = $my_result ."<div class=\"col-xs-12 ".$className ."\">" .wp_get_attachment_link($id, $size, $link) ."</div>";
-  }
-
-	if( !empty( $my_result ) ) {
-		$return = "<div class=\"col-xs-12 col-md-12\">" .$my_result ."</div>";
-	}
 
 	return $return;
 }
