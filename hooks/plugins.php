@@ -17,7 +17,7 @@ if ( ! function_exists( 'nateserk_tinycup_show_external_share_options' ) ) :
         if( $custom_options['nateserk_tinycup_fbapp_social_like_enable'] == true && !empty($custom_options['nateserk_tinycup-fbapp_Id']) ) {
         ?>
             <div class="col-md-12 share-section">
-              <div class="fb-like" data-href="<? echo get_permalink(); ?>" data-layout="<?php echo $custom_options['nateserk_tinycup_fbapp_social_like_layout']; ?>" data-action="like" data-size="large" data-show-faces="false" data-share="<?php echo $custom_options['nateserk_tinycup_fbapp_social_like_include_share']; ?>"></div>
+              <div class="fb-like" data-href="<?php echo esc_url( get_permalink() ); ?>" data-layout="<?php echo $custom_options['nateserk_tinycup_fbapp_social_like_layout']; ?>" data-action="like" data-size="large" data-show-faces="false" data-share="<?php echo $custom_options['nateserk_tinycup_fbapp_social_like_include_share']; ?>"></div>
             </div>
             <div class="clearfix"></div>
         <?php
