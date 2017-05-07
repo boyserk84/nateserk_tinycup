@@ -42,59 +42,61 @@ if ( !function_exists('nateserk_tinycup_social_links') ) :
             $html_Url = "";
             $html_class = "";
             $html_dataTitle = "";
-            switch($key)
-            {
-                case "nateserk_tinycup-facebook-url":
-                    $html_IconDiv = "fa fa-facebook-square fa-3x";
-                    $html_Url = $value;
-                    $html_class = "facebook";
-                    $html_dataTitle = "Facebook";
-                break;
+            if ( !empty($value) ) {
+              switch($key)
+              {
+                  case "nateserk_tinycup-facebook-url":
+                      $html_IconDiv = "fa fa-facebook-square fa-3x";
+                      $html_Url = $value;
+                      $html_class = "facebook";
+                      $html_dataTitle = "Facebook";
+                  break;
 
-                case "nateserk_tinycup-twitter-url":
-                    $html_IconDiv = "fa fa-twitter-square fa-3x";
-                    $html_Url = $value;
-                    $html_class = "twitter";
-                    $html_dataTitle = "Twitter";
-                break;
+                  case "nateserk_tinycup-twitter-url":
+                      $html_IconDiv = "fa fa-twitter-square fa-3x";
+                      $html_Url = $value;
+                      $html_class = "twitter";
+                      $html_dataTitle = "Twitter";
+                  break;
 
-                case "nateserk_tinycup-instagram-url":
-                    $html_IconDiv = "fa fa-instagram fa-3x";
-                    $html_Url = $value;
-                    $html_class = "instagram";
-                    $html_dataTitle = "Instagram";
-                break;
+                  case "nateserk_tinycup-instagram-url":
+                      $html_IconDiv = "fa fa-instagram fa-3x";
+                      $html_Url = $value;
+                      $html_class = "instagram";
+                      $html_dataTitle = "Instagram";
+                  break;
 
-                case "nateserk_tinycup-google-plus-url":
-                    $html_IconDiv = "fa fa-google-plus-square fa-3x";
-                    $html_Url = $value;
-                    $html_class = "google-plus";
-                    $html_dataTitle = "Google-Plus";
-                break;
+                  case "nateserk_tinycup-google-plus-url":
+                      $html_IconDiv = "fa fa-google-plus-square fa-3x";
+                      $html_Url = $value;
+                      $html_class = "google-plus";
+                      $html_dataTitle = "Google-Plus";
+                  break;
 
-                case "nateserk_tinycup-tumblr-url":
-                    $html_IconDiv = "fa fa-tumblr-square fa-3x";
-                    $html_Url = $value;
-                    $html_class = "tumblr";
-                    $html_dataTitle = "Tumblr";
-                break;
+                  case "nateserk_tinycup-tumblr-url":
+                      $html_IconDiv = "fa fa-tumblr-square fa-3x";
+                      $html_Url = $value;
+                      $html_class = "tumblr";
+                      $html_dataTitle = "Tumblr";
+                  break;
 
-                case "nateserk_tinycup-snapchat-url":
-                    $html_IconDiv = "fa fa-snapchat-square fa-3x";
-                    $html_Url = $value;
-                    $html_class = "snapchat";
-                    $html_dataTitle = "Snapchat";
-                break;
+                  case "nateserk_tinycup-snapchat-url":
+                      $html_IconDiv = "fa fa-snapchat-square fa-3x";
+                      $html_Url = $value;
+                      $html_class = "snapchat";
+                      $html_dataTitle = "Snapchat";
+                  break;
 
-                case "nateserk_tinycup-twitch-url":
-                    $html_IconDiv = "fa fa-twitch fa-3x";
-                    $html_Url = $value;
-                    $html_class = "twitch";
-                    $html_dataTitle = "Twitch";
-                break;
+                  case "nateserk_tinycup-twitch-url":
+                      $html_IconDiv = "fa fa-twitch fa-3x";
+                      $html_Url = $value;
+                      $html_class = "twitch";
+                      $html_dataTitle = "Twitch";
+                  break;
 
-                default:
-                break;
+                  default:
+                  break;
+              }
             }
 
             if ( !empty( $html_IconDiv ) ) { ?>
