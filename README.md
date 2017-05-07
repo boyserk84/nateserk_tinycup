@@ -15,6 +15,12 @@ Libraries Included
 
 Current Version
 ===
+Version 1.0.1p4 Updated 05/06/2017
+* Fixed the issue with Facebook social share showing a debug text.
+* Fixed the issue with social link not being removed although url value is empty.
+* Added the first version of modal-dialog shortcode.
+
+
 Version 1.0.1p3 Updated 03/25/2017
 * Facebook social sharing options for each post.
 * Added rename options in a shell script `zip_theme.sh`
@@ -78,6 +84,12 @@ sh zip_theme.sh
 ```
 
 This will generate a zip file of this theme. It is located in `export` folder on your computer.
+
+If you would like to rename the theme name in the generated zip theme file,
+* Run the following command:
+```
+sh zip_theme.sh --rename YOUR_PREFERRED_THEME_NAME
+```
 
 
 * Log-in to your Wordpress website.
