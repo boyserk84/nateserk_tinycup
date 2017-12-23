@@ -151,6 +151,27 @@ function nateserk_tinycup_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'nateserk_tinycup_scripts' );
 
+
+/**
+* Create a modal dialog button
+*
+* @param text             Text displayed on the button.
+* @param url              URL to redirect if 'redirect' pressAction is specified,
+* @param pressAction      by default it is dismissed when click. (option dismiss | redirect )
+*/
+if ( !function_exists('nateserk_tinycup_create_modal_dialog_button') ) :
+  function nateserk_tinycup_create_modal_dialog_button($text, $url ,$pressAction) {
+    if ( $pressAction == 'redirect' ) : ?>
+        <a id="modal_btn_redirect" class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $text; ?></a>
+    <?php
+    else : ?>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text; ?></button>
+    <?php
+    endif;
+  }
+endif;
+
+
 /**
  * Implement the Custom Header feature.
  */

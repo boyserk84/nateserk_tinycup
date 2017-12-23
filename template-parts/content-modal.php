@@ -31,28 +31,17 @@ if( $options['nateserk_tinycup-home-modal-dialog-toggle'] == true) :
       <div class="modal-footer" style="text-align:center;">
         <?php
           // Populate primary and secondary buttons
-          // P2: Perhaps make this a function.
-
           // Secondary button - on the left
-          $txt = $options['nateserk_tinycup-home-modal-dialog-btn-secondary-text'];
-          $url = $options['nateserk_tinycup-home-modal-dialog-btn-secondary-url'];
-          if ( $options['nateserk_tinycup-home-modal-dialog-btn-secondary-action'] == 'redirect' ) : ?>
-              <a id="modal_btn_redirect" class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $txt; ?></a>
-          <?php
-          else : ?>
-              <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $txt; ?></button>
-          <?php
-          endif;
+          nateserk_tinycup_create_modal_dialog_button(
+            $options['nateserk_tinycup-home-modal-dialog-btn-secondary-text'],
+            $options['nateserk_tinycup-home-modal-dialog-btn-secondary-url'],
+            $options['nateserk_tinycup-home-modal-dialog-btn-secondary-action']);
+
           // Primary button - on the right
-          $txt = $options['nateserk_tinycup-home-modal-dialog-btn-primary-text'];
-          $url = $options['nateserk_tinycup-home-modal-dialog-btn-primary-url'];
-          if ( $options['nateserk_tinycup-home-modal-dialog-btn-primary-action'] == 'redirect' ) : ?>
-              <a id="modal_btn_redirect" class="btn btn-default" href="<?php echo $url; ?>" role="button"><?php echo $txt; ?></a>
-          <?php
-          else : ?>
-              <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $txt; ?></button>
-          <?php
-          endif;
+          nateserk_tinycup_create_modal_dialog_button(
+            $options['nateserk_tinycup-home-modal-dialog-btn-primary-text'],
+            $options['nateserk_tinycup-home-modal-dialog-btn-primary-url'],
+            $options['nateserk_tinycup-home-modal-dialog-btn-primary-action']);
           ?>
       </div>
     </div><!--.modal-content-->
