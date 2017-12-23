@@ -8,7 +8,7 @@
  */
 
 /**
-* [open_modal_video]
+* [open_modal_dialog button_text="Click Here" button_class="btn-danger"] Your Content [open_modal_dialog]
 * Short Code: Create a button for trigger an empty modal dialog.
 */
 if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
