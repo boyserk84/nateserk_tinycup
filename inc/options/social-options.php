@@ -127,3 +127,17 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-twi
     'type'	  	=> 'url',
     'priority'  => 22
 ) );
+
+/* GitHub URL */
+$wp_customize->add_setting( 'nateserk_tinycup_theme_options[nateserk_tinycup-github-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['nateserk_tinycup-github-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-github-url]', array(
+    'label'		=> __( 'Github url', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-github-url]',
+    'type'	  	=> 'url',
+    'priority'  => 23
+) );

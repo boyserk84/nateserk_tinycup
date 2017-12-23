@@ -94,6 +94,13 @@ if ( !function_exists('nateserk_tinycup_social_links') ) :
                       $html_dataTitle = "Twitch";
                   break;
 
+                  case "nateserk_tinycup-github-url":
+                    $html_IconDiv = "fa fa-github fa-3x";
+                    $html_Url = $value;
+                    $html_class = "github";
+                    $html_dataTitle = "GitHub";
+                  break;
+
                   default:
                   break;
               }

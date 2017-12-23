@@ -31,14 +31,15 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
 
         $default_theme_options = array(
             /*header options*/
-            'natekserk_tinycup-header-logo'          => '',
-            'natekserk_tinycup-facebook-url'         => '',
-            'natekserk_tinycup-twitter-url'          => '',
-            'natekserk_tinycup-instagram-url'        => '',
-            'natekserk_tinycup-google-plus-url'      => '',
-            'natekserk_tinycup-tumblr-url'           => '',
-            'natekserk_tinycup-snapchat-url'         => '',
-            'natekserk_tinycup-enable-social'        => true,
+            'nateserk_tinycup-header-logo'          => '',
+            'nateserk_tinycup-facebook-url'         => '',
+            'nateserk_tinycup-twitter-url'          => '',
+            'nateserk_tinycup-instagram-url'        => '',
+            'nateserk_tinycup-google-plus-url'      => '',
+            'nateserk_tinycup-tumblr-url'           => '',
+            'nateserk_tinycup-snapchat-url'         => '',
+            'nateserk_tinycup-github-url'           => '',
+            'nateserk_tinycup-enable-social'        => true,
 
             /**related post options*/
             'nateserk_tinycup-enable-related-posts' => true,
