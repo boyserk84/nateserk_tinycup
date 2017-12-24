@@ -8,7 +8,7 @@
  */
 
 /**
-* [open_modal_dialog button_text="Click Here" button_class="btn-danger"] Your Content [open_modal_dialog]
+* [open_modal_dialog button_text="Click Here" button_class="btn-danger" button_icon="fa-camera-retro fa-4x"] Your Content [open_modal_dialog]
 * Short Code: Create a button for trigger an empty modal dialog.
 */
 if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
@@ -17,10 +17,17 @@ if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
       $a = shortcode_atts(
       array(
           'button_text'=> "Launch",
-          'button_class'=> "btn-primary"
+          'button_class'=> "btn-primary",
+          'button_icon'=> ""
       ), $atts);
 
-      return "<button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">" .$a['button_text']
+      $iconHtml = "";
+      if ( !empty( $a['button_icon'] ) ) {
+        $iconHtml = '<i class="fa ' .$a['button_icon'] .'" aria-hidden="true"></i> ';
+      }
+
+      return "<button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">"
+      .$iconHtml .$a['button_text']
         ."</button><style type=\"text/css\">
             body.modal-open #main,
             body.modal-open #masthead,
