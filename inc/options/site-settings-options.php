@@ -57,9 +57,6 @@ $wp_customize->add_control(
   )
 );
 
-
-
-
 $SHOW_PER_ROW_BY_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-show-per-row]';
 $SHOW_PER_ROW_BY_KEY = 'nateserk_tinycup-show-per-row';
 
@@ -79,8 +76,6 @@ $wp_customize->add_control( $SHOW_PER_ROW_BY_ID, array(
     'choices'   => array('4'=>4, '3'=>3, '2'=>2, '1'=>1),
     'priority'  => 10
 ) );
-
-
 
 $TOGGLE_TB_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-tb-div]';
 $TOGGLE_TB_KEY = 'nateserk_tinycup-tb-div';
