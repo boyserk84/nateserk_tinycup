@@ -15,28 +15,12 @@ Libraries Included
 
 Current Version
 ===
-Version 1.0.1p4 Updated 05/06/2017
-* Fixed the issue with Facebook social share showing a debug text.
-* Fixed the issue with social link not being removed although url value is empty.
-* Added the first version of modal-dialog shortcode.
+Version 1.0.1p5 Updated 12/23/2017
+* Added the custom options for icon and button for modal-dialog shortcode.
+* Added `Github` to social options.
+* Simplify and consolidate customizer options.
 
-
-Version 1.0.1p3 Updated 03/25/2017
-* Facebook social sharing options for each post.
-* Added rename options in a shell script `zip_theme.sh`
-
-Version 1.0.1p2 Updated 02/04/2017
-* Be able to customize how many items displayed per row.
-* Fixed pagination issue.
-* Added input sanitizer and validator for customizable UI.
-* Shell script for update theme manually on the server.
-
-Version 1.0.1p Updated 01/22/2017
-* Misc Option: Either show a full text or logo of the theme.
-* Fixed the widget area not blurred out issue when the home modal dialog is displaying.
-
-Version 1.0.1 Updated 01/21/2017
-* Fixed the issue with cookies not being reset if redirect out of the website from the home modal dialog.
+### Details and previous changelogs can be found at `CHANGELOG.md` (https://github.com/boyserk84/nateserk_tinycup/blob/master/CHANGELOG.md).
 
 End-Users Ready-to-use Customizable Features
 ===
