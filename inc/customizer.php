@@ -34,18 +34,6 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
   $related_posts_options_file_path = nateserk_tinycup_file_directory('inc/options/related-posts-options.php');
 	require $related_posts_options_file_path;
 
-  /** header-logo options */
-  $header_logo_file_path = nateserk_tinycup_file_directory('inc/options/header-logo-options.php');
-	require $header_logo_file_path;
-
-  /** copyright-optionsright options */
-  $copyright_options_file_path = nateserk_tinycup_file_directory('inc/options/copyright-options.php');
-	require $copyright_options_file_path;
-
-  /** thumbnail options */
-  $tb_options_file_path = nateserk_tinycup_file_directory('inc/options/thumbnail-options.php');
-	require $tb_options_file_path;
-
   /** Home Modal dialog options */
   $home_modal_options_file_path = nateserk_tinycup_file_directory('inc/options/home-modal-dialog-options.php');
 	require $home_modal_options_file_path;
@@ -54,13 +42,14 @@ function nateserk_tinycup_customize_register( $wp_customize ) {
   $link_color_options_file_path = nateserk_tinycup_file_directory('inc/options/custom-links-color-options.php');
 	require $link_color_options_file_path;
 
-  /** Misc options */
-  $misc_options_file_path = nateserk_tinycup_file_directory('inc/options/misc-options.php');
-  require $misc_options_file_path;
 
   /** External plugins options */
   $plugins_options_file_path = nateserk_tinycup_file_directory('inc/options/plugins-options.php');
   require $plugins_options_file_path;
+
+  /** Site Settings Options */
+  $site_settings_options_file_path = nateserk_tinycup_file_directory('inc/options/site-settings-options.php');
+  require $site_settings_options_file_path;
 
 }
 add_action( 'customize_register', 'nateserk_tinycup_customize_register' );
