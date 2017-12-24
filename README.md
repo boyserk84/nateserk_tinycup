@@ -20,7 +20,7 @@ Version 1.0.1p5 Updated 12/23/2017
 * Added `Github` to social options.
 * Simplify and consolidate customizer options.
 
-### Details and previous changelogs can be found at `CHANGELOG.md` (https://github.com/boyserk84/nateserk_tinycup/blob/master/CHANGELOG.md).
+#### Details and previous changelogs can be found at [CHANGELOG.md](https://github.com/boyserk84/nateserk_tinycup/blob/master/CHANGELOG.md).
 
 End-Users Ready-to-use Customizable Features
 ===
