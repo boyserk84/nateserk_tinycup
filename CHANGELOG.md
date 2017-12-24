@@ -7,6 +7,9 @@ Change Log
 * Added the custom options for icon and button for modal-dialog shortcode.
 * Added `Github` to social options.
 
+### Removed
+* Removed `misc`, `header-logo`, `copyright-text`, and `thumbnails` options and consolidated them into `site-settings` customizer.
+
 
 ## Version 1.0.1p4 Updated 05/06/2017
 
