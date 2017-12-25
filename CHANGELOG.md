@@ -7,6 +7,9 @@ Change Log
 * Added the custom options for icon and button for modal-dialog shortcode.
 * Added `Github` to social options.
 
+### Fixed
+* Fixed the issue with the modal dialog shortcode button showing the same modal dialog instead of its own content.
+
 ### Removed
 * Removed `misc`, `header-logo`, `copyright-text`, and `thumbnails` options and consolidated them into `site-settings` customizer.
 
