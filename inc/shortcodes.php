@@ -21,12 +21,13 @@ if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
           'button_icon'=> ""
       ), $atts);
 
+      $uniqueId = uniqid("modal_");
       $iconHtml = "";
       if ( !empty( $a['button_icon'] ) ) {
         $iconHtml = '<i class="fa ' .$a['button_icon'] .'" aria-hidden="true"></i> ';
       }
 
-      return "<button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">"
+      return "<button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" data-toggle=\"modal\" data-target=\"#myModal-$uniqueId\">"
       .$iconHtml .$a['button_text']
         ."</button><style type=\"text/css\">
             body.modal-open #main,
@@ -37,7 +38,7 @@ if ( ! function_exists( 'nateserk_tinycup_open_empty_modal_dialog' ) ) :
             }
           }</style>"
 
-        ."<div class=\"modal fade\" tabindex=\"-1\" id =\"myModal\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
+        ."<div class=\"modal fade\" tabindex=\"-1\" id =\"myModal-$uniqueId\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
           <div class=\"modal-dialog modal-lg\" role=\"document\">
             <div class=\"modal-content\">"
               .$content
