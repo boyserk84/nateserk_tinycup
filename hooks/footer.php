@@ -18,12 +18,14 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_scripts' ) ) :
         $options = nateserk_tinycup_get_theme_options();
         $gTrackingId = $options['nateserk_tinycup-g-analytic-tracking-id'];
 
-        // TODO: Remove the commented out script src
+        if ( nateserk_tinycup_is_in_development_mode() === false ) {
+          // Fetching from CDN instead
         ?>
         <!-- Latest compiled and minified JavaScript -->
-        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         <?php
+        }
           if ( !empty($gTrackingId) ) : ?>
         <!-- Google Anayltics -->
         <script>

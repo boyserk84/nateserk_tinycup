@@ -33,8 +33,19 @@ add_action( 'nateserk_tinycup_action_before_head', 'nateserk_tinycup_set_global'
 if ( ! function_exists( 'nateserk_tinycup_set_external_stylesheets' ) ) :
 
     function nateserk_tinycup_set_external_stylesheets() {
+        $options = nateserk_tinycup_get_theme_options();
+
+        if ( nateserk_tinycup_is_in_development_mode() === false ) {
+          // Fetching from CDN instead
+        ?>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <?php
+        }
           // Customized style CSS (override for custom-links-color-options)
-          $options = nateserk_tinycup_get_theme_options();
         ?>
         <style type="text/css">
           <?php

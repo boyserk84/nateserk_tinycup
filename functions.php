@@ -116,6 +116,35 @@ function nateserk_tinycup_widgets_init() {
 }
 add_action( 'widgets_init', 'nateserk_tinycup_widgets_init' );
 
+
+/**
+* Check if the current wordpress theme is in the development mode.
+* Dev mode - fetching scripts and styles locally instead of CDN.
+*/
+function nateserk_tinycup_is_in_development_mode()
+{
+	$options = nateserk_tinycup_get_theme_options();
+	return isset($options['nateserk_tinycup_development_mode']) && $options['nateserk_tinycup_development_mode'] === true;
+}
+
+/**
+* Enqueue scripts and styles for development mode - using locally host scripts and styles.
+*/
+function nateserk_tinycup_scripts_development_mode() {
+	if ( nateserk_tinycup_is_in_development_mode() === true )
+	{
+		/** Bootstrap Theme CSS */
+		wp_enqueue_style('nateserk_tinycup-bootstrap-theme-css', get_template_directory_uri() ."/assets/library/bootstrap/3.3.7/css/bootstrap-theme.min.css", array(), '3.3.7');
+
+		/** Bootstrap Min CSS */
+		wp_enqueue_style('nateserk_tinycup-bootstrap-min-css', get_template_directory_uri() ."/assets/library/bootstrap/3.3.7/css/bootstrap.min.css", array(), '3.3.7');
+
+		/** Bootstrap JS for Google Analytic */
+		wp_enqueue_script('nateserk_tinycup-jquery', get_template_directory_uri() ."/assets/library/bootstrap/3.3.7/js/bootstrap.min.js", array(), '3.3.7', true);
+	}
+
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -125,14 +154,11 @@ function nateserk_tinycup_scripts() {
 
 	wp_enqueue_style( 'nateserk_tinycup-style', get_stylesheet_uri(), array(), '1.0.3' );
 
-	/*Font-Awesome-master*/
+	/* Font-Awesome-master*/
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/library/font-awesome/css/font-awesome.min.css', array(), '4.7.0' );
 
-	/** Bootstrap Theme CSS */
-	wp_enqueue_style('nateserk_tinycup-bootstrap-theme-css', get_template_directory_uri() ."/assets/library/bootstrap/3.3.7/css/bootstrap-theme.min.css", array(), '3.3.7');
 
-	/** Bootstrap Min CSS */
-	wp_enqueue_style('nateserk_tinycup-bootstrap-min-css', get_template_directory_uri() ."/assets/library/bootstrap/3.3.7/css/bootstrap.min.css", array(), '3.3.7');
+	nateserk_tinycup_scripts_development_mode();
 
 	/*********************************************
   /** Footer loading scripts and stylesheets
@@ -141,9 +167,6 @@ function nateserk_tinycup_scripts() {
 	wp_enqueue_script( 'nateserk_tinycup-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'nateserk_tinycup-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	/** Bootstrap JS for Google Analytic */
-	wp_enqueue_script('nateserk_tinycup-jquery', get_template_directory_uri() ."/assets/library/bootstrap/3.1.1/js/bootstrap.min.js", array(), '3.1.1', true);
 
 	/** JS Cookie */
 	wp_enqueue_script( 'nateserk_tinycup-js-cookie', get_template_directory_uri() . '/assets/library/js-cookie/js.cookie.min.js', array(), '2.1.3', true );
