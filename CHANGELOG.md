@@ -6,6 +6,7 @@ Change Log
 ### Added
 * Added the custom options for icon and button for modal-dialog shortcode.
 * Added `Github` to social options.
+* Development mode. Fetching styles and scripts locally instead of fetching them from CDN by setting `nateserk_tinycup_development_mode` flag in `init.php`.
 
 ### Fixed
 * Fixed the issue with the modal dialog shortcode button showing the same modal dialog instead of its own content.
