@@ -141,6 +141,14 @@ function nateserk_tinycup_scripts_development_mode() {
 
 		/** Bootstrap JS for Google Analytic */
 		wp_enqueue_script('nateserk_tinycup-jquery', get_template_directory_uri() ."/assets/library/bootstrap/3.3.7/js/bootstrap.min.js", array(), '3.3.7', true);
+
+		/** Jquery 3.1.1 */
+		wp_enqueue_script('nateserk_tinycup-jquery', get_template_directory_uri() ."/assets/library/jquery/3.1.1/jquery-3.1.1.min.js", array(), '3.1.1', true);
+
+	} else {
+
+		/** Jquery 3.1.1 */
+		wp_enqueue_script('nateserk_tinycup-jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1', true);
 	}
 
 }
@@ -156,7 +164,6 @@ function nateserk_tinycup_scripts() {
 
 	/* Font-Awesome-master*/
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/library/font-awesome/css/font-awesome.min.css', array(), '4.7.0' );
-
 
 	nateserk_tinycup_scripts_development_mode();
 
