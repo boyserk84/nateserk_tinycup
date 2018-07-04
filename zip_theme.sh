@@ -1,20 +1,21 @@
 # Shell batch on Mac OSX for zip all theme's files.
 #!/bin/bash
 timestamp=$(date +%s)
-echo "Zipping 'nateserk_tinycup' theme generated at timestamp=$timestamp \n";
+STR_SOURCE="nateserk_tinycup"
+echo "Zipping '$STR_SOURCE' theme generated at timestamp=$timestamp \n";
 STR_NAME="nateserk_tinycup"
 
 if [ "$1" != "" ]; then
   if [ "$1" == "--rename" ]; then
     if [ "$2" != "" ]; then
-      echo "[ Running ] Renaming 'nateserk_tinycup' to $2"
+      echo "[ Running ] Renaming '$STR_SOURCE' to $2"
       if [[ "$OSTYPE" == "darwin"* ]];  then
         echo "[ Running ] Detecting 'macOSX'. Update 'rename' options. "
         # if running on mac OSX, we need -i '' and -e options.
         # Reference: http://stackoverflow.com/questions/19456518/invalid-command-code-despite-escaping-periods-using-sed
-        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" 'nateserk_tinycup' . | xargs sed -i '' -e 's/nateserk_tinycup/'"$2"'/g'
+        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" $STR_SOURCE_NAME . | xargs sed -i '' -e 's/'"$STR_SOURCE_NAME"'/'"$2"'/g'
       else
-        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" 'nateserk_tinycup' . | xargs sed -i 's/nateserk_tinycup/'"$2"'/g'
+        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" $STR_SOURCE_NAME . | xargs sed -i 's/'"$STR_SOURCE_NAME"'/'"$2"'/g'
       fi
       echo "[ Running ] Replacing content in 'style.css'."
       # Update content in style.css
@@ -34,5 +35,20 @@ else
 fi
 
 echo "[ Running ] Archiving theme to '"$STR_NAME"'.zip "
-sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/$STR_NAME.zip" *
-sudo rm ".DS_Store"
+result=$(sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/$STR_NAME.zip" *)
+
+if [[ $result = *"zip error"* ]]; then
+  echo "[ Error ] Zip error occured."
+  echo $result
+  exit 1
+fi
+
+if [ -e ".DS_Store" ]; then
+  sudo rm ".DS_Store"
+fi
+
+# Clean up and revert changes.
+git checkout .
+
+exit 0
+
