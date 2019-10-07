@@ -11,10 +11,16 @@ Libraries Included
 * JQuery
 * Font-awesome
 * Google Fonts
-* Bootstrap CSS
+* Bootstrap CSS (3.3.7)
 
 Current Version
 ===
+Version 1.0.2 Updated 10/06/2019
+* Added shortcode for a custom link button.
+* Fixed the footer.
+* Added shortcode for a custom card with a button.
+
+
 Version 1.0.1p5 Updated 12/23/2017
 * Added the custom options for icon and button for modal-dialog shortcode.
 * Added `Github` to social options.
@@ -34,6 +40,7 @@ End-Users Ready-to-use Customizable Features
 * Customizable link colors
 * Misc-Option (Google Analytic Tracking Id Integration, how to show theme logo)
 * Customize displaying number of items per row.
+* Customizable card (similar to Bootstrap)
 
 Requirement
 ===

@@ -1,6 +1,12 @@
 Change Log
 ===
 
+## Version 1.0.2 Updated 10/06/2019
+* Added a shortcode for a custom link button.
+* Fixed the footer.
+* Added shortcode for a custom card with a button.
+
+
 ## Version 1.0.1p5 Updated 12/23/2017
 
 ### Added
