@@ -14,9 +14,9 @@ if [ "$1" != "" ]; then
         # if running on mac OSX, we need -i '' and -e options.
         # Reference: http://stackoverflow.com/questions/19456518/invalid-command-code-despite-escaping-periods-using-sed
         # Reference: https://apple.stackexchange.com/questions/275373/how-to-make-grep-work-like-in-ubuntu
-        grep -rl . --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" $STR_SOURCE_NAME . | xargs sed -i '' -e 's/'"$STR_SOURCE_NAME"'/'"$2"'/g'
+        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" $STR_SOURCE_NAME . | xargs sed -i '' -e 's/'"$STR_SOURCE_NAME"'/'"$2"'/g'
       else
-        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="./export" $STR_SOURCE_NAME . | xargs sed -i 's/'"$STR_SOURCE_NAME"'/'"$2"'/g'
+        grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" $STR_SOURCE_NAME . | xargs sed -i 's/'"$STR_SOURCE_NAME"'/'"$2"'/g'
       fi
       echo "[ Running ] Replacing content in 'style.css'."
       # Update content in style.css
