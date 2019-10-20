@@ -78,7 +78,7 @@ if ( ! function_exists( 'nateserk_tinycup_custom_link_button' ) ) :
 
       
       if ( !empty($a['url']) ) {
-        return "<a href=\"$linkUrl\" alt=\"$altText\">$htmlButton</a>";
+        return "<a href=\"$linkUrl\" alt=\"$altText\" id=\"$uniqueId\">$htmlButton</a>";
       } else {
         return $htmlButton;
       }
