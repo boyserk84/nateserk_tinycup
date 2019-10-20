@@ -40,6 +40,29 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_scripts' ) ) :
         </script>
         <?php
         endif;
+
+        ?>
+        <!-- Track click -->
+        <script type="text/javascript">
+        function clickTrack(e, cat, action, label, val) {
+          e.preventDefault();
+          let linkUrl = $("#" + event.target.id).attr("href");
+          if (window.ga && window.ga.create) {
+            // GG is available.
+            ga('send', 'event', cat, action, label, val,
+              {
+                hitCallback: function() {
+                  window.location.href = linkUrl;
+                }
+              }
+            );
+          } else {
+            // no tracking
+            window.location.href = linkUrl;
+          }
+        };
+        </script>
+        <?php
     }
 
 endif;

@@ -105,7 +105,10 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
           "header_text" => "",
           "body_text" => "",
           "side_text" => "",
-          "alt_text" => ""
+          "alt_text" => "",
+          "track_action" => "",
+          "track_label" => "regular",
+          "track_value" => "0"
       ), $atts);
 
       $uniqueId = ( !empty($a['track_id']) )? $a['track_id'] : "na";
@@ -116,8 +119,12 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
         $iconHtml = '<i class="fa ' .$a['button_icon'] .'" aria-hidden="true"></i> ';
       }
 
+      $track_label = $a['track_label'];
+      $track_value = $a['track_value'];
+      $track_action = ( !empty($a['track_action']) )? ( "click_" .$a['track_action'] ): "click";
+
       // button
-      $htmlButton = "<a href=\"$linkUrl\" alt=\"$altText\" id=\"$uniqueId\"><button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" id=\"$uniqueId\">"
+      $htmlButton = "<a href=\"$linkUrl\" alt=\"$altText\" id=\"$uniqueId\" onclick=clickTrack(event,\"button\",\"$track_action\",\"$track_label\",\"$track_value\")><button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" id=\"$uniqueId\">"
         .$iconHtml .$content ."</button></a>";
 
       $cardSize = $a['card_size'];
@@ -156,59 +163,3 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
   }
 endif;
 add_shortcode('custom_card', 'nateserk_tinycup_custom_card');
-
-/**
-* [custom_track_gg_click_event category="videos" action="play" value="8" label="fall campaign"]Button_ID[/custom_track_gg_click_event]
-* Short Code: Create Google Analytic tracking event
-*/
-if ( ! function_exists( 'nateserk_tinycup_track_gg_click_event' ) ) :
-
-  function nateserk_tinycup_track_gg_click_event( $atts, $content=null ) {
-      $a = shortcode_atts(
-      array(
-          'category'=> "",
-          'action'=> "",
-          'value'=> "",
-          'label'=> ""
-      ), $atts);
-
-      $eventCategory = $atts['category'];
-      $eventValue = $atts['value'];
-      $eventAction = $atts['action'];
-      $eventLabel = $atts['label'];
-      $eventId = preg_replace('/\s+/', '', $content);
-
-      // Abort if there is no eventId defined.
-      if (empty($eventId)) {
-        return "";
-      }
-
-      $embedJsScript = "ga('send', 'event', '$eventCategory', '$eventAction', '$eventLabel', '$eventValue',{
-            hitCallback: function() { window.location.href = $(this).attr(\"href\"); }});";
-
-      $mainScript = "
-      <script type=\"text/javascript\">
-        function load_and_track_$eventId(){
-          $(document).ready(function() {
-            $(\"#$eventId\").on(\"click\",function(e){
-              e.preventDefault();
-              if(window.ga && ga.create) {
-                $embedJsScript
-              } else {
-                window.location.href = $(this).attr(\"href\");
-              }
-            });
-          });//ready
-        };
-        window.onload = function() {
-          if (window.jQuery) {  
-            load_and_track_$eventId();
-          } else {
-            setTimeout(load_and_track_$eventId,850);
-          }
-        };</script>";
-
-      return $mainScript;
-  }
-endif;
-add_shortcode('custom_track_gg_click_event', 'nateserk_tinycup_track_gg_click_event');
