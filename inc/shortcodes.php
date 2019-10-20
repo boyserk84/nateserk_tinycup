@@ -176,30 +176,35 @@ if ( ! function_exists( 'nateserk_tinycup_track_gg_click_event' ) ) :
       $eventValue = $atts['value'];
       $eventAction = $atts['action'];
       $eventLabel = $atts['label'];
-      $eventId = $content;
+      $eventId = preg_replace('/\s+/', '', $content);
 
-      $embedJsScript = "ga('send', 'event', '$eventCategory', '$eventAction', '$eventLabel', '$eventValue',
-        {
-          hitCallback: function() {
-            window.location.href = $(this).attr(\"href\");
-          }
-        });";
+      // Abort if there is no eventId defined.
+      if (empty($eventId)) {
+        return "";
+      }
+
+      $embedJsScript = "ga('send', 'event', '$eventCategory', '$eventAction', '$eventLabel', '$eventValue',{
+            hitCallback: function() { window.location.href = $(this).attr(\"href\"); }});";
 
       $mainScript = "
       <script type=\"text/javascript\">
-        function load_and_track(){
+        function load_and_track_$eventId(){
           $(document).ready(function() {
             $(\"#$eventId\").on(\"click\",function(e){
               e.preventDefault();
-              $embedJsScript
+              if(window.ga && ga.create) {
+                $embedJsScript
+              } else {
+                window.location.href = $(this).attr(\"href\");
+              }
             });
           });//ready
         };
         window.onload = function() {
           if (window.jQuery) {  
-            load_and_track();
+            load_and_track_$eventId();
           } else {
-            setTimeout(load_and_track,700);
+            setTimeout(load_and_track_$eventId,850);
           }
         };</script>";
 
