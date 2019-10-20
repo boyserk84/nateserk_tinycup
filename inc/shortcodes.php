@@ -158,7 +158,7 @@ endif;
 add_shortcode('custom_card', 'nateserk_tinycup_custom_card');
 
 /**
-* [custom_track_gg_click_event category="videos" action="play" value="8" label="fall campaign"] ID [/custom_track_gg_click_event]
+* [custom_track_gg_click_event category="videos" action="play" value="8" label="fall campaign"]Button_ID[/custom_track_gg_click_event]
 * Short Code: Create Google Analytic tracking event
 */
 if ( ! function_exists( 'nateserk_tinycup_track_gg_click_event' ) ) :
@@ -187,15 +187,20 @@ if ( ! function_exists( 'nateserk_tinycup_track_gg_click_event' ) ) :
 
       $mainScript = "
       <script type=\"text/javascript\">
+        function load_and_track(){
+          $(document).ready(function() {
+            $(\"#$eventId\").on(\"click\",function(e){
+              e.preventDefault();
+              $embedJsScript
+            });
+          });//ready
+        };
         window.onload = function() {
           if (window.jQuery) {  
-            $( document ).ready(function() {
-              $(\"$eventId\").on(\"click\",function(e){
-                e.preventDefault();
-                $embedJsScript
-              });
-            });//ready
-          };//jquery
+            load_and_track();
+          } else {
+            setTimeout(load_and_track,700);
+          }
         };</script>";
 
       return $mainScript;
