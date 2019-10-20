@@ -1,6 +1,10 @@
 Change Log
 ===
 
+## Version 1.0.2p1 Updated 10/20/2019
+## Added
+* Added shortcode for Google Analytics button click event.
+
 ## Version 1.0.2 Updated 10/06/2019
 ### Added
 * Added a shortcode for a custom link button.
