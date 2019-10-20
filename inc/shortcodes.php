@@ -156,3 +156,49 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
   }
 endif;
 add_shortcode('custom_card', 'nateserk_tinycup_custom_card');
+
+/**
+* [custom_track_gg_click_event category="videos" action="play" value="8" label="fall campaign"] ID [/custom_track_gg_click_event]
+* Short Code: Create Google Analytic tracking event
+*/
+if ( ! function_exists( 'nateserk_tinycup_track_gg_click_event' ) ) :
+
+  function nateserk_tinycup_track_gg_click_event( $atts, $content=null ) {
+      $a = shortcode_atts(
+      array(
+          'category'=> "",
+          'action'=> "",
+          'value'=> "",
+          'label'=> ""
+      ), $atts);
+
+      $eventCategory = $atts['category'];
+      $eventValue = $atts['value'];
+      $eventAction = $atts['action'];
+      $eventLabel = $atts['label'];
+      $eventId = $content;
+
+      $embedJsScript = "ga('send', 'event', '$eventCategory', '$eventAction', '$eventLabel', '$eventValue',
+        {
+          hitCallback: function() {
+            window.location.href = $(this).attr(\"href\");
+          }
+        });";
+
+      $mainScript = "
+      <script type=\"text/javascript\">
+        window.onload = function() {
+          if (window.jQuery) {  
+            $( document ).ready(function() {
+              $(\"$eventId\").on(\"click\",function(e){
+                e.preventDefault();
+                $embedJsScript
+              });
+            });//ready
+          };//jquery
+        };</script>";
+
+      return $mainScript;
+  }
+endif;
+add_shortcode('custom_track_gg_click_event', 'nateserk_tinycup_track_gg_click_event');
