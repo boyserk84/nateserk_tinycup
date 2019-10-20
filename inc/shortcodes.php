@@ -50,7 +50,7 @@ endif;
 add_shortcode('open_modal_dialog', 'nateserk_tinycup_open_empty_modal_dialog');
 
 /**
-* [custom_link_button button_track_id="id" button_alt_text="Link to this" button_url="http://www.blahblahb.com" button_class="btn-danger" button_icon="fa-camera-retro fa-4x"] Your Text [/custom_link_button]
+* [custom_link_button track_id="id" alt_text="Link to this" url="http://www.blahblahb.com" button_class="btn-danger" button_icon="fa-camera-retro fa-4x"] Your Text [/custom_link_button]
 * Short Code: Create a customized button.
 */
 if ( ! function_exists( 'nateserk_tinycup_custom_link_button' ) ) :
@@ -58,16 +58,16 @@ if ( ! function_exists( 'nateserk_tinycup_custom_link_button' ) ) :
   function nateserk_tinycup_custom_link_button( $atts, $content=null ) {
       $a = shortcode_atts(
       array(
-          'button_url'=> "",
+          'url'=> "",
           'button_class'=> "btn-primary",
           'button_icon'=> "",
-          'button_track_id' => "",
-          'button_alt_text' => ""
+          'track_id' => "",
+          'alt_text' => ""
       ), $atts);
 
-      $uniqueId = ( !empty($a['button_track_id']) )?$a['button_track_id'] : "na";
-      $linkUrl = $a['button_url'];
-      $altText = ( !empty($a['button_alt_text']) )? $a['button_alt_text'] : ("Click to visit ".$linkUrl);
+      $uniqueId = ( !empty($a['track_id']) )?$a['track_id'] : "na";
+      $linkUrl = $a['url'];
+      $altText = ( !empty($a['alt_text']) )? $a['alt_text'] : ("Click to visit ".$linkUrl);
       $iconHtml = "";
       if ( !empty( $a['button_icon'] ) ) {
         $iconHtml = '<i class="fa ' .$a['button_icon'] .'" aria-hidden="true"></i> ';
@@ -77,7 +77,7 @@ if ( ! function_exists( 'nateserk_tinycup_custom_link_button' ) ) :
         .$iconHtml .$content ."</button>";
 
       
-      if ( !empty($a['button_url']) ) {
+      if ( !empty($a['url']) ) {
         return "<a href=\"$linkUrl\" alt=\"$altText\">$htmlButton</a>";
       } else {
         return $htmlButton;
@@ -117,7 +117,7 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
       }
 
       // button
-      $htmlButton = "<a href=\"$linkUrl\" alt=\"$altText\"><button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" id=\"$uniqueId\">"
+      $htmlButton = "<a href=\"$linkUrl\" alt=\"$altText\" id=\"$uniqueId\"><button type=\"button\" class=\"btn " .$a['button_class'] ." btn-lg\" id=\"$uniqueId\">"
         .$iconHtml .$content ."</button></a>";
 
       $cardSize = $a['card_size'];
