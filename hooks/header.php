@@ -95,3 +95,34 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_title' ) ) :
 
 endif;
 add_action( 'nateserk_tinycup_action_site_header_title', 'nateserk_tinycup_set_site_header_title', 0 );
+
+
+/**
+* Add Google Analytics Tag to <HEAD> section. 
+* Update: 2020/12/20 
+*
+* @param null
+* @return null
+*/
+if ( ! function_exists( 'nateserk_tinycup_set_google_analytic_tag_header' ) ) :
+
+  function nateserk_tinycup_set_google_analytic_tag_header() {
+      $options = nateserk_tinycup_get_theme_options();
+      $gTrackingId = $options['nateserk_tinycup-g-analytic-tracking-id'];
+
+      if ( !empty($gTrackingId) ) : ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $gTrackingId; ?>"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '<?php echo $gTrackingId; ?>');
+        </script>
+      <?php
+      endif;
+  }
+
+endif;
+add_action( 'nateserk_tinycup_action_set_google_analytic_tag_header', 'nateserk_tinycup_set_google_analytic_tag_header', 0 );

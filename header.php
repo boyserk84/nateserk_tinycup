@@ -21,8 +21,13 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php
+	// Google Analytic setup
+	do_action( 'nateserk_tinycup_set_google_analytic_tag_header');
+
+	// Wordpress Header setup
 	wp_head();
 
+	// Theme specific header setup
 	do_action( 'nateserk_tinycup_action_in_header' );
 ?>
 </head>

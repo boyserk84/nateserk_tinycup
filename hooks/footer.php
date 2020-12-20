@@ -26,21 +26,6 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_scripts' ) ) :
 
         <?php
         }
-          if ( !empty($gTrackingId) ) : ?>
-        <!-- Google Anayltics -->
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-          ga('create', '<?php echo $gTrackingId; ?>', 'auto');
-          ga('send', 'pageview');
-
-        </script>
-        <?php
-        endif;
-
         ?>
         <!-- Track click -->
         <script type="text/javascript">
@@ -49,6 +34,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_scripts' ) ) :
           let linkUrl = $("#" + event.target.id).attr("href");
           if (window.ga && window.ga.create) {
             // GG is available.
+            // TODO: REDO this check gtagjs
             ga('send', 'event', cat, action, label, val,
               {
                 hitCallback: function() {
@@ -58,6 +44,8 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_scripts' ) ) :
             );
           } else {
             // no tracking
+            // TODO: Remove this once done
+            console.log("NO TRACKING Deteted! gaNull=" + (window.ga == null));
             window.location.href = linkUrl;
           }
         };
