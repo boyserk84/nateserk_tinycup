@@ -32,16 +32,18 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_scripts' ) ) :
         function clickTrack(e, cat, action, label, val) {
           e.preventDefault();
           let linkUrl = $("#" + event.target.id).attr("href");
-          if (window.ga && window.ga.create) {
+          if (window.gtag && window.gtag.create) {
             // GG is available.
             // TODO: REDO this check gtagjs
-            ga('send', 'event', cat, action, label, val,
-              {
-                hitCallback: function() {
+            gtag('event', action, { 
+              'event_category': cat, 
+              'event_label': label,
+              'value': val,
+              'event_callback': function() {
+                  console.log("GTAG is done!"); // TODO: Test this.
                   window.location.href = linkUrl;
-                }
               }
-            );
+            });
           } else {
             // no tracking
             // TODO: Remove this once done
