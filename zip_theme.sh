@@ -37,7 +37,7 @@ else
 fi
 
 echo "[ Running ] Archiving theme to '"$STR_NAME"'.zip "
-result=$(sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/$STR_NAME.zip" *)
+result=$(sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/"$STR_NAME".zip" *)
 
 if [[ $result = *"zip error"* ]]; then
   echo "[ Error ] Zip error occured."
