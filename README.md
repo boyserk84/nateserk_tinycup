@@ -13,8 +13,11 @@ Libraries Included
 * Google Fonts
 * Bootstrap CSS (3.3.7)
 
-Current Version
+CHANGE LOGS
 ===
+version 1.0.3 Updated 12/21/2020
+* Replace `analytic.js` with `gtag.js` from Google Analytic.
+
 Version 1.0.2p1 Updated 10/20/2019
 * Accommodate Button Click Tracking for custom card shortcode.
 
