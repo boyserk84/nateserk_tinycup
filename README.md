@@ -15,6 +15,9 @@ Libraries Included
 
 CHANGE LOGS
 ===
+version 1.0.4 Update 06/27/2021
+* Support `mp4/video` preview on the custom card with a button.
+
 version 1.0.3 Updated 12/21/2020
 * Replace `analytic.js` with `gtag.js` from Google Analytic.
 
