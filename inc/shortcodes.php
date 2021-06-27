@@ -88,7 +88,7 @@ add_shortcode('custom_link_button', 'nateserk_tinycup_custom_link_button');
 
 
 /**
-* [custom_card card_size="12" card_img="" header_text="Title" body_text="Body" side_text="Side Text" url="http://www.google.com" alt_text="Alt text" ] Your Text [/custom_card]
+* [custom_card card_size="12" card_video="" card_img="" header_text="Title" body_text="Body" side_text="Side Text" url="http://www.google.com" alt_text="Alt text" ] Your Text [/custom_card]
 * Short Code: Create a custom card with text and button (similar to Bootstrap Card version 4.0.0)
 */
 if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
@@ -102,6 +102,7 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
           'track_id' => "",
           'card_size' => "12",
           "card_img" => "",
+          "card_video" => "",
           "header_text" => "",
           "body_text" => "",
           "side_text" => "",
@@ -129,6 +130,7 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
 
       $cardSize = $a['card_size'];
       $cardImg = $a['card_img'];
+      $cardVideo = $a['card_video'];
       
       // title
       $titleHtml = "";
@@ -155,9 +157,18 @@ if ( ! function_exists( 'nateserk_tinycup_custom_card' ) ) :
         $sideLayoutHtml = "<div class\"col-md-12 col-sm-12\" style=\"text-align:center;\">$htmlButton</div>";
       }
 
+      // Media preview
+      $mediaHtml = '';
+      if ( !empty($a['card_img']) ) {
+        $mediaHtml = "<img src=\"$cardImg\" class=\"img-thumbnail\" \>"; 
+      }
+
+      if ( !empty($a['card_video']) ) {
+        $mediaHtml = "<video width=\"100%\" controls controlsList=\"nodownload\"><source src=\"$cardVideo\" type=\"video/mp4\"></video>";
+      }
+
       // final layout
-      $layoutHtml = "<div class=\"col-md-$cardSize col-sm-12\"><img src=\"$cardImg\" class=\"img-thumbnail\" \>"
-        ."$titleHtml $bodyHtml $sideLayoutHtml </div>";
+      $layoutHtml = "<div class=\"col-md-$cardSize col-sm-12\">" ."$mediaHtml $titleHtml $bodyHtml $sideLayoutHtml </div>";
 
       return $layoutHtml;
   }
