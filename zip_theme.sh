@@ -1,5 +1,16 @@
-# Shell batch on Mac OSX for zip all theme's files.
 #!/bin/bash
+# Shell batch on Mac OSX for zip all theme's files.
+
+###
+# 06/29/2021 - Just run the following commands directly 
+# MacOS isn't able to execute this script successfully.
+###
+# grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" nateserk_tinycup . | xargs sed -i '' -e 's/'"nateserk_tinycup"'/'"YOUR_NEW_NAME"'/g'
+# sed -i '' -e `s/Nateserk Tinycup/YOUR_NEW_NAME/g` style.css
+# sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/"$STR_NAME".zip" *
+# git checkout .
+
+
 timestamp=$(date +%s)
 STR_SOURCE="nateserk_tinycup"
 echo "Zipping '$STR_SOURCE' theme generated at timestamp=$timestamp \n";
@@ -21,7 +32,7 @@ if [ "$1" != "" ]; then
       fi
       echo "[ Running ] Replacing content in 'style.css'."
       # Update content in style.css
-      sed -i '' -e 's/Nateserk Tinycup/'$2'/g' style.css
+      sed -i '' -e `s/Nateserk Tinycup/${2}/g` style.css
 
     else
       echo "[ Error ] Invalid --rename parameter. Abort!"
