@@ -101,6 +101,20 @@ if ( !function_exists('nateserk_tinycup_social_links') ) :
                     $html_dataTitle = "GitHub";
                   break;
 
+                  case "nateserk_tinycup-reddit-url":
+                    $html_IconDiv = "fa fa-reddit fa-3x";
+                    $html_Url = $value;
+                    $html_class = "reddit";
+                    $html_dataTitle = "Reddit";
+                  break;
+
+                  case "nateserk_tinycup-youtube-url":
+                        $html_IconDiv = "fa fa-youtube fa-3x";
+                        $html_Url = $value;
+                        $html_class = "youtube";
+                        $html_dataTitle = "YouTube";
+                  break;
+
                   default:
                   break;
               }

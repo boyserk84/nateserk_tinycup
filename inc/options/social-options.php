@@ -141,3 +141,31 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-git
     'type'	  	=> 'url',
     'priority'  => 23
 ) );
+
+/* Reddit URL */
+$wp_customize->add_setting( 'nateserk_tinycup_theme_options[nateserk_tinycup-reddit-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['nateserk_tinycup-reddit-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-reddit-url]', array(
+    'label'		=> __( 'Reddit url', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-reddit-url]',
+    'type'	  	=> 'url',
+    'priority'  => 24
+) );
+
+/* YouTube URL */
+$wp_customize->add_setting( 'nateserk_tinycup_theme_options[nateserk_tinycup-youtube-url]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['nateserk_tinycup-youtube-url'],
+    'sanitize_callback' => 'esc_url_raw',
+) );
+$wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-youtube-url]', array(
+    'label'		=> __( 'YouTube url', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-youtube-url]',
+    'type'	  	=> 'url',
+    'priority'  => 25
+) );

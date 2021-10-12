@@ -39,6 +39,8 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-tumblr-url'           => '',
             'nateserk_tinycup-snapchat-url'         => '',
             'nateserk_tinycup-github-url'           => '',
+            'nateserk_tinycup-reddit-url'           => '',
+            'nateserk_tinycup-youtube-url'          => '',
             'nateserk_tinycup-enable-social'        => true,
 
             /**related post options*/
