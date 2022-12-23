@@ -177,3 +177,22 @@ $wp_customize->add_control( $POWER_BY_ID, array(
     'choices'   => array('text'=>'text', 'logo'=>'logo'),
     'priority'  => 20
 ) );
+
+$TOGGLE_POWER_BY_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-toggle-footer-option]';
+$TOGGLE_POWER_KEY = 'nateserk_tinycup-toggle-footer-option';
+
+/* Whether to display a footer logo or not */
+$wp_customize->add_setting( $TOGGLE_POWER_BY_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$TOGGLE_POWER_KEY],
+    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+) );
+
+$wp_customize->add_control( $TOGGLE_POWER_BY_ID, array(
+    'label'		=> __( 'Enable Trademark Footer', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('Toggle on/off our footer theme logo/text'),
+    'settings'  => $TOGGLE_POWER_BY_ID,
+    'type'	  	=> 'checkbox',
+    'priority'  => 21
+) );

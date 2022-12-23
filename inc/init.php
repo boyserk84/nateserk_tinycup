@@ -80,6 +80,7 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
 
             /** How to show theme logo at the footer*/
             'nateserk_tinycup-show-engine-option'=>'text',
+            'nateserk_tinycup-toggle-footer-option'=> true,
 
             'nateserk_tinycup-show-per-row'=>4,
 
