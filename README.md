@@ -15,6 +15,9 @@ Libraries Included
 
 CHANGE LOGS
 ===
+version 1.0.6 Update 12/23/2022
+* Support toggle on and off fotter.
+
 version 1.0.5 Update 10/11/2021
 * Support showing `Reddit` and `YouTube` social network icons/links option.
 
