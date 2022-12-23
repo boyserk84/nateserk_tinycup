@@ -1,5 +1,11 @@
 Change Log
 ===
+## Version 1.0.6 Update 12/23/2022
+* Support toggle on and off fotter.
+
+## Version 1.0.5 Update 10/11/2021
+* Support showing `Reddit` and `YouTube` social network icons/links option.
+
 ## Version 1.0.4 Update 06/27/2021
 * Support `mp4/video` preview on the custom card with a button.
 
