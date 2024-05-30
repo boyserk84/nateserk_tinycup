@@ -1,0 +1,40 @@
+version: '3.1'
+# This is Docker local development
+# docker-compose up
+# docker-compose down -v
+services:
+
+  # Maria DB (MySQL replacement) only use 10.8.2 image for local development
+  db:
+    image: mariadb:10.8.2
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: exampledb
+    volumes:
+      - "db:/docker/wordpress_docker/mysql"
+
+  # similar to phpmyadmin
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - ../:/var/www/html/wp-content/themes/nateserk_tinycup
+
+volumes:
+  wordpress:
+  db:
+
