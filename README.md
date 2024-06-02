@@ -15,6 +15,10 @@ Libraries Included
 
 CHANGE LOGS
 ===
+version 1.0.7 Update 06/01/2024
+* Support `docker` for a local development
+* Customize site-header compositions
+
 version 1.0.6 Update 12/23/2022
 * Support toggle on and off footer.
 
