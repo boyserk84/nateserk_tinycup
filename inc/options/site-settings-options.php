@@ -179,7 +179,7 @@ $wp_customize->add_control( $POWER_BY_ID, array(
 ) );
 
 $TOGGLE_POWER_BY_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-toggle-footer-option]';
-$TOGGLE_POWER_KEY = 'nateserk_tinycup-toggle-footer-option';
+$TOGGLE_POWER_KEY = 'HEADER_COMPOST_ID';
 
 /* Whether to display a footer logo or not */
 $wp_customize->add_setting( $TOGGLE_POWER_BY_ID, array(
@@ -196,3 +196,25 @@ $wp_customize->add_control( $TOGGLE_POWER_BY_ID, array(
     'type'	  	=> 'checkbox',
     'priority'  => 21
 ) );
+
+
+$HEADER_COMPOST_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-header-composition-option]';
+$HEADER_COMPOST_KEY = 'nateserk_tinycup-header-composition-option';
+
+/* Show the header composition option */
+$wp_customize->add_setting( $HEADER_COMPOST_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$HEADER_COMPOST_KEY],
+    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+) );
+
+$wp_customize->add_control( $HEADER_COMPOST_ID, array(
+    'label'		=> __( 'Header Composition', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('Where the logo is located'),
+    'settings'  => $HEADER_COMPOST_ID,
+    'type'	  	=> 'select',
+    'choices'   => array('center'=>'Center Logo (Default)', 'left'=>'Left Logo', 'right'=>'Right Logo'),
+    'priority'  => 22
+) );
+

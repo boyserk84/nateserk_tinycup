@@ -45,6 +45,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_stylesheets' ) ) :
 
         <?php
         }
+        
           // Customized style CSS (override for custom-links-color-options)
         ?>
         <style type="text/css">
@@ -95,6 +96,165 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_title' ) ) :
 
 endif;
 add_action( 'nateserk_tinycup_action_site_header_title', 'nateserk_tinycup_set_site_header_title', 0 );
+
+
+/**
+ * Show the left header composition
+ * 
+* @param null
+* @return html tag
+ */
+if ( ! function_exists( 'nateserk_tinycup_set_site_header_left_composition' ) ) :
+
+  function nateserk_tinycup_set_site_header_left_composition() {
+      $options = nateserk_tinycup_get_theme_options();
+      if ( $options['nateserk_tinycup-header-composition-option'] == 'left' && !empty($options['nateserk_tinycup-header-composition-option']) ) :
+        ?>
+			<div class="col-xs-12 col-md-12 site-branding" id="left_logo_composition">
+				<div class="row">
+					<div class="container-fluid">
+					<div class="col-xs-12 col-md-4">
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php
+							// show title or logo
+							do_action('nateserk_tinycup_action_site_header_title');
+						?>
+						</a></h1>
+						<?php
+
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
+								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+							<?php
+							endif;
+						?>
+					</div>
+					<div class="col-xs-12 col-md-7">
+							
+								<nav class="navbar" role="navigation">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+									<i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+									</button>
+								</div><!--navbar-header-->
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse navbar-ex1-collapse">
+									<h1 class="site-title">
+										<?php do_action('nateserk_tinycup_action_setup_menu', 'menu-header'); ?>
+									</h1>
+								</div><!-- navbar-ex1-collapse -->
+								</nav><!--navbar-->
+							
+					</div>
+					</div><!--container-fluid-->
+				</div>
+			</div><!-- left logo composition -->
+
+        <?php
+      endif;
+  }
+
+endif;
+add_action( 'nateserk_tinycup_set_site_header_left_composition', 'nateserk_tinycup_set_site_header_left_composition', 0 );
+
+/**
+ * Show the center/default header composition
+ * 
+* @param null
+* @return html tag
+ */
+if ( ! function_exists( 'nateserk_tinycup_set_site_header_center_composition' ) ) :
+
+  function nateserk_tinycup_set_site_header_center_composition() {
+      $options = nateserk_tinycup_get_theme_options();
+      if ( $options['nateserk_tinycup-header-composition-option'] == 'center' || empty($options['nateserk_tinycup-header-composition-option']) ) :
+        ?>
+        <div class="col-xs-12 col-md-12 site-branding" id="default_logo_composition">
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <?php
+              // show title or logo
+              do_action('nateserk_tinycup_action_site_header_title');
+            ?>
+            </a></h1>
+            <?php
+
+            $description = get_bloginfo( 'description', 'display' );
+            if ( $description || is_customize_preview() ) : ?>
+              <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+            <?php
+            endif;
+            ?>
+			  </div><!-- .site-branding --> <!-- default logo composition -->
+        <?php
+      endif;
+  }
+
+endif;
+add_action( 'nateserk_tinycup_set_site_header_center_composition', 'nateserk_tinycup_set_site_header_center_composition', 0 );
+
+/**
+ * Show the right header composition
+ * 
+* @param null
+* @return html tag
+ */
+if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) ) :
+
+  function nateserk_tinycup_set_site_header_right_composition() {
+      $options = nateserk_tinycup_get_theme_options();
+      if ( $options['nateserk_tinycup-header-composition-option'] == 'right' || !empty($options['nateserk_tinycup-header-composition-option']) ) :
+        ?>
+        <div class="col-xs-12 col-md-12 site-branding" id="right_logo_composition">
+          <div class="row">
+            <div class="container-fluid">
+            
+            <div class="col-xs-12 col-md-7">
+                
+                  <nav class="navbar" role="navigation">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+                    </button>
+                  </div><!--navbar-header-->
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <h1 class="site-title">
+                      <?php do_action('nateserk_tinycup_action_setup_menu', 'menu-header'); ?>
+                    </h1>
+                  </div><!-- navbar-ex1-collapse -->
+                  </nav><!--navbar-->
+                
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+              <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+              <?php
+                // show title or logo
+                do_action('nateserk_tinycup_action_site_header_title');
+              ?>
+              </a></h1>
+              <?php
+
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) : ?>
+                  <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                <?php
+                endif;
+              ?>
+            </div>
+
+            </div><!--container-fluid-->
+          </div>
+			  </div><!-- .site-branding --> <!-- Right logo composition -->
+        <?php
+      endif;
+  }
+
+endif;
+add_action( 'nateserk_tinycup_set_site_header_right_composition', 'nateserk_tinycup_set_site_header_right_composition', 0 );
+
 
 
 /**
