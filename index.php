@@ -21,10 +21,16 @@ endif;
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 		<?php
-		if ( have_posts() ) :
+		// Determine which post category is going to display on the front page
+		$options = nateserk_tinycup_get_theme_options();
+		$categoryToDisplay = $options['nateserk_tinycup-display-category-listing-option'];		
+		if ($categoryToDisplay != "all" && !empty($categoryToDisplay)) {
+			// Update which category to display if specific. Otherwise, show all!
+			query_posts("cat=". $categoryToDisplay); 
+		}
 
+		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
@@ -32,12 +38,10 @@ endif;
 
 			<?php
 			endif;
-
 			// Show all listing with a customized pagination
 			get_template_part( 'template-parts/content', 'listing');
 
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
