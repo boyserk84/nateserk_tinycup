@@ -113,7 +113,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_left_composition' ) ) 
 			<div class="col-xs-12 col-md-12 site-branding" id="left_logo_composition">
 				<div class="row">
 					<div class="container-fluid">
-					<div class="col-xs-12 col-md-4">
+					<div class="col-xs-12 col-md-4 nav-align-v-center" style="float:none;">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php
 							// show title or logo
@@ -128,9 +128,8 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_left_composition' ) ) 
 							<?php
 							endif;
 						?>
-					</div>
-					<div class="col-xs-12 col-md-7">
-							
+					</div><!-- -->
+					<div class="col-xs-12 col-md-7 nav-align-v-center" style="float:none;">
 								<nav class="navbar" role="navigation">
 								<!-- Brand and toggle get grouped for better mobile display -->
 								<div class="navbar-header">
@@ -209,7 +208,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) )
           <div class="row">
             <div class="container-fluid">
             
-            <div class="col-xs-12 col-md-7">
+            <div class="col-xs-12 col-md-7 nav-align-v-center" style="float:none;">
                 
                   <nav class="navbar" role="navigation">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -228,7 +227,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) )
                 
             </div>
 
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 nav-align-v-center" style="float:none;">
               <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <?php
                 // show title or logo

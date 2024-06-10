@@ -508,6 +508,11 @@ textarea {
 	width:50%;
 }
 
+.nav-align-v-center {
+	display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
