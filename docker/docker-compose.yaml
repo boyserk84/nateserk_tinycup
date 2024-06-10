@@ -12,7 +12,7 @@ services:
       MARIADB_ROOT_PASSWORD: example
       MARIADB_DATABASE: exampledb
     volumes:
-      - "db:/docker/wordpress_docker/mysql"
+      - "../docker/db:/var/lib/mysql"
 
   # similar to phpmyadmin
   adminer:
