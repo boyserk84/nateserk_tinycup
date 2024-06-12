@@ -68,3 +68,21 @@ $wp_customize->add_control( $LINK_VISITED_COLOR_ID, array(
     'type'	  	=> 'text',
     'priority'  => 17
 ) );
+
+$DEFAULT_TEXT_COLOR_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-custom-default-text-color]';
+$DEFAULT_TEXT_COLOR_KEY = 'nateserk_tinycup-custom-default-text-color';
+/** Setting for default text color */
+$wp_customize->add_setting( $DEFAULT_TEXT_COLOR_ID, array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults[$DEFAULT_TEXT_COLOR_KEY],
+    'sanitize_callback' => 'sanitize_hex_color'
+) );
+
+$wp_customize->add_control( $DEFAULT_TEXT_COLOR_ID, array(
+    'label'		=> __( 'Default Text Color', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('Default regular text color.'),
+    'settings'  => $DEFAULT_TEXT_COLOR_ID,
+    'type'	  	=> 'text',
+    'priority'  => 18
+) );

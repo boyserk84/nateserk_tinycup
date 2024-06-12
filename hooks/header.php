@@ -67,7 +67,16 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_stylesheets' ) ) :
               color:<?php echo $options['nateserk_tinycup-custom-link-visited-color']; ?>;
             }
           <?php
-          endif;?>
+          endif;
+          // Override default text color
+          $default_text_color = $options['nateserk_tinycup-custom-default-text-color'];
+          if (!empty($default_text_color)) : ?>
+          body {
+              color:<?php echo esc_attr( $default_text_color ); ?>;
+            }
+          <?php
+          endif;
+          ?>
         </style><!--override CSS stylesheet-->
         <?php
     }
