@@ -15,9 +15,11 @@ Libraries Included
 
 CHANGE LOGS
 ===
-version 1.0.7 Update 06/01/2024
+version 1.0.7 Update 06/11/2024
 * Support `docker` for a local development
 * Support customizing a site-header composition
+* Support customizing a default text color
+* Update `Jquery` to `3.5.1`
 
 version 1.0.6 Update 12/23/2022
 * Support toggle on and off footer.
