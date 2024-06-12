@@ -129,6 +129,12 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_left_composition' ) ) 
 							do_action('nateserk_tinycup_action_site_header_title');
 						?>
 						</a></h1>
+                <div class="col-xs-12 col-md-12">
+                  <?php
+                  // show social links 
+                  do_action('nateserk_tinycup_action_show_social_options', "2x");
+                  ?>
+                </div>
 						<?php
 
 							$description = get_bloginfo( 'description', 'display' );
@@ -243,6 +249,12 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) )
                 do_action('nateserk_tinycup_action_site_header_title');
               ?>
               </a></h1>
+                  <div class="col-xs-12 col-md-12">
+                    <?php
+                    // show social links 
+                    do_action('nateserk_tinycup_action_show_social_options', "2x"); 
+                    ?>
+                  </div>
               <?php
 
                 $description = get_bloginfo( 'description', 'display' );

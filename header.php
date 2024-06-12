@@ -50,15 +50,16 @@ do_action( 'nateserk_tinycup_action_before_head' );?>
 			else:
 				do_action('nateserk_tinycup_set_site_header_center_composition');
 				$isDefaultComposition = true;
+				?>
+				<div class="container-fluid">
+					<?php
+					// Showing social links
+					do_action('nateserk_tinycup_action_show_social_options');
+					?>
+				</div><!--container-fluid-->
+			<?php
 			endif;
 		?>
-			
-			<div class="container-fluid">
-				<?php
-				// Showing social links
-				do_action('nateserk_tinycup_action_show_social_options');
-				?>
-			</div><!--container-fluid-->
 
 		<?php
 			// Only default/center header composition shows navigation under social links
