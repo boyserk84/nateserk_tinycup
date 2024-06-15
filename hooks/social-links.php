@@ -16,6 +16,7 @@ if ( ! function_exists( 'nateserk_tinycup_show_social_options' ) ) :
             ?>
             <div class="col-xs-12 col-md-12 socials">
               <?php
+              $iconSize = $custom_options['nateserk_tinycup-social-icon-size'];
                 if (!isset($iconSize) || empty($iconSize)) {
                     $iconSize = "3x";
                 }
