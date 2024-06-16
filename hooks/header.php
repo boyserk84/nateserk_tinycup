@@ -67,7 +67,16 @@ if ( ! function_exists( 'nateserk_tinycup_set_external_stylesheets' ) ) :
               color:<?php echo $options['nateserk_tinycup-custom-link-visited-color']; ?>;
             }
           <?php
-          endif;?>
+          endif;
+          // Override default text color
+          $default_text_color = $options['nateserk_tinycup-custom-default-text-color'];
+          if (!empty($default_text_color)) : ?>
+          body {
+              color:<?php echo esc_attr( $default_text_color ); ?>;
+            }
+          <?php
+          endif;
+          ?>
         </style><!--override CSS stylesheet-->
         <?php
     }
@@ -113,24 +122,29 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_left_composition' ) ) 
 			<div class="col-xs-12 col-md-12 site-branding" id="left_logo_composition">
 				<div class="row">
 					<div class="container-fluid">
-					<div class="col-xs-12 col-md-4">
+					<div class="col-xs-12 col-md-4 nav-align-v-center" style="float:none;">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php
 							// show title or logo
 							do_action('nateserk_tinycup_action_site_header_title');
 						?>
 						</a></h1>
+                <div class="col-xs-12 col-md-12">
+                  <?php
+                  // show social links 
+                  do_action('nateserk_tinycup_action_show_social_options', "2x");
+                  ?>
+                </div>
 						<?php
 
 							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) : ?>
+							if ( !empty($description) || is_customize_preview() ) : ?>
 								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 							<?php
 							endif;
 						?>
-					</div>
-					<div class="col-xs-12 col-md-7">
-							
+					</div><!-- -->
+					<div class="col-xs-12 col-md-7 nav-align-v-center" style="float:none;">
 								<nav class="navbar" role="navigation">
 								<!-- Brand and toggle get grouped for better mobile display -->
 								<div class="navbar-header">
@@ -180,7 +194,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_center_composition' ) 
             <?php
 
             $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
+            if ( !empty($description) || is_customize_preview() ) : ?>
               <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
             <?php
             endif;
@@ -209,7 +223,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) )
           <div class="row">
             <div class="container-fluid">
             
-            <div class="col-xs-12 col-md-7">
+            <div class="col-xs-12 col-md-7 nav-align-v-center" style="float:none;">
                 
                   <nav class="navbar" role="navigation">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -228,17 +242,23 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) )
                 
             </div>
 
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 nav-align-v-center" style="float:none;">
               <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <?php
                 // show title or logo
                 do_action('nateserk_tinycup_action_site_header_title');
               ?>
               </a></h1>
+                  <div class="col-xs-12 col-md-12">
+                    <?php
+                    // show social links 
+                    do_action('nateserk_tinycup_action_show_social_options', "2x"); 
+                    ?>
+                  </div>
               <?php
 
                 $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
+                if ( !empty($description) || is_customize_preview() ) : ?>
                   <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
                 <?php
                 endif;

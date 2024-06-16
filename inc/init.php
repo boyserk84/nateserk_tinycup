@@ -42,6 +42,7 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-reddit-url'           => '',
             'nateserk_tinycup-youtube-url'          => '',
             'nateserk_tinycup-enable-social'        => true,
+            'nateserk_tinycup-social-icon-size'     => '3x',
 
             /**related post options*/
             'nateserk_tinycup-enable-related-posts' => true,
@@ -74,6 +75,8 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
             'nateserk_tinycup-custom-link-color'=>'',
             'nateserk_tinycup-custom-link-hover-color'=>'',
             'nateserk_tinycup-custom-link-visited-color'=>'',
+            /** default text color */
+            'nateserk_tinycup-custom-default-text-color' => '',
 
             /** Google Analytics */
             'nateserk_tinycup-g-analytic-tracking-id'=>'',
@@ -86,6 +89,8 @@ if ( !function_exists('nateserk_tinycup_get_default_theme_options') ) :
 
             /** Show header composition */
             'nateserk_tinycup-header-composition-option'=>'center',
+
+            //'nateserk_tinycup-display-category-listing-option' => 'all',
 
             'nateserk_tinycup-theme-gallery-toggle'=>false,
 

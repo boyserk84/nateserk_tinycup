@@ -26,6 +26,23 @@ $wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-ena
     'description'=> __('Showing or hiding social media links.'),
     'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-enable-social]',
     'type'	  	=> 'checkbox',
+    'priority'  => 14
+) );
+
+/** Set size of the social media icons */
+$wp_customize->add_setting( 'nateserk_tinycup_theme_options[nateserk_tinycup-social-icon-size]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['nateserk_tinycup-social-icon-size'],
+    //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox'
+) );
+
+$wp_customize->add_control( 'nateserk_tinycup_theme_options[nateserk_tinycup-social-icon-size]', array(
+    'label'		=> __( 'Size of social media icons', 'nateserk_tinycup' ),
+    'section'   => $SECTION_NAME,
+    'description'=> __('Select the size'),
+    'settings'  => 'nateserk_tinycup_theme_options[nateserk_tinycup-social-icon-size]',
+    'type'	  	=> 'select',
+    'choices'   => array('2x' => '2x','3x'=>'3x (Default)', '4x'=>'4x', '5x'=>'5x'),
     'priority'  => 15
 ) );
 
