@@ -2,15 +2,16 @@
 # Shell batch on Mac OSX for zip all theme's files.
 
 ###
-# 06/29/2021 - Just run the following commands directly 
+# 06/16/2024 - Just run the following commands directly 
 # MacOS isn't able to execute this script successfully.
 ###
-# grep -rl . --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" --exclude-dir="docker" -e "nateserk_tinycup" | xargs sed -i '' -e 's/'"nateserk_tinycup"'/'"YOUR_THEME_NAME"'/g'
+# grep -rl . --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" --exclude-dir="docker" --exclude="*.zip" -e "nateserk_tinycup" | xargs sed -i '' -e 's/'"nateserk_tinycup"'/'"YOUR_THEME_NAME"'/g'
 # sed -i '' -e 's/Nateserk Tinycup/YOUR_THEME_NAME/g' style.css
-# zip -r "YOUR_THEME_NAME.zip" . -x "zip_theme.sh" ".gitignore" ".jshintignore" ".jscsrc" "*.DS_Store" "export/*" "docker/*" ".git/*"
+# zip -r "YOUR_THEME_NAME.zip" . -x "zip_theme.sh" ".gitignore" ".jshintignore" ".jscsrc" "*.DS_Store" "export/*" "docker/*" ".git/*" "*.zip"
 # git checkout .
 
 
+# TODO: The following script needs to be revised.
 timestamp=$(date +%s)
 STR_SOURCE="nateserk_tinycup"
 echo "Zipping '$STR_SOURCE' theme generated at timestamp=$timestamp \n";
