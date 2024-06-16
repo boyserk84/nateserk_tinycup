@@ -5,9 +5,9 @@
 # 06/29/2021 - Just run the following commands directly 
 # MacOS isn't able to execute this script successfully.
 ###
-# grep -rl --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" nateserk_tinycup . | xargs sed -i '' -e 's/'"nateserk_tinycup"'/'"YOUR_NEW_NAME"'/g'
-# sed -i '' -e `s/Nateserk Tinycup/YOUR_NEW_NAME/g` style.css
-# sudo zip -r --exclude=zip_theme.sh --exclude=*.DS_Store* --exclude=export/* -X "export/"$STR_NAME".zip" *
+# grep -rl . --exclude-dir=".git" --exclude="zip_theme.sh" --exclude-dir="export" --exclude-dir="docker" -e "nateserk_tinycup" | xargs sed -i '' -e 's/'"nateserk_tinycup"'/'"YOUR_THEME_NAME"'/g'
+# sed -i '' -e 's/Nateserk Tinycup/YOUR_THEME_NAME/g' style.css
+# zip -r "YOUR_THEME_NAME.zip" . -x "zip_theme.sh" ".gitignore" ".jshintignore" ".jscsrc" "*.DS_Store" "export/*" "docker/*" ".git/*"
 # git checkout .
 
 
