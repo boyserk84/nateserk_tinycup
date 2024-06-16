@@ -23,12 +23,12 @@ endif;
 		<main id="main" class="site-main" role="main">
 		<?php
 		// Determine which post category is going to display on the front page
-		$options = nateserk_tinycup_get_theme_options();
-		$categoryToDisplay = $options['nateserk_tinycup-display-category-listing-option'];		
-		if ($categoryToDisplay != "all" && !empty($categoryToDisplay)) {
+		//$options = nateserk_tinycup_get_theme_options();
+		//$categoryToDisplay = $options['nateserk_tinycup-display-category-listing-option'];		
+		//if ($categoryToDisplay != "all" && !empty($categoryToDisplay)) {
 			// Update which category to display if specific. Otherwise, show all!
-			query_posts("cat=". $categoryToDisplay); 
-		}
+		//	query_posts("cat=". $categoryToDisplay); 
+		//}
 
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) : ?>
