@@ -218,3 +218,30 @@ $wp_customize->add_control( $HEADER_COMPOST_ID, array(
     'priority'  => 22
 ) );
 
+
+// $DISPLAY_CATEGORY_LISTING_ID = 'nateserk_tinycup_theme_options[nateserk_tinycup-display-category-listing-option]';
+// $DISPLAY_CATEGORY_LISTING_KEY = 'nateserk_tinycup-display-category-listing-option';
+
+// /* Displayed category option */
+// $wp_customize->add_setting( $DISPLAY_CATEGORY_LISTING_ID, array(
+//     'capability'		=> 'edit_theme_options',
+//     'default'			=> $defaults[$DISPLAY_CATEGORY_LISTING_KEY],
+//     //'sanitize_callback' => 'nateserk_tinycup_sanitize_checkbox',
+// ) );
+
+// $cateogries_array = get_categories();
+// $cat_choices = array('all' => 'All Categories');
+// foreach ( $cateogries_array as $category) {
+//     $cat_choices[$category->term_id] = $category->name ." ( cat_id=" .$category->term_id .")";
+// }
+
+// $wp_customize->add_control( $DISPLAY_CATEGORY_LISTING_ID, array(
+//     'label'		=> __( 'Listing Posts on Homepage', 'nateserk_tinycup' ),
+//     'section'   => $SECTION_NAME,
+//     'description'=> __('Displayed posts from the selected category'),
+//     'settings'  => $DISPLAY_CATEGORY_LISTING_ID,
+//     'type'	  	=> 'select',
+//     'choices'   => $cat_choices,
+//     'priority'  => 23
+// ) );
+
