@@ -138,7 +138,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_left_composition' ) ) 
 						<?php
 
 							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) : ?>
+							if ( !empty($description) || is_customize_preview() ) : ?>
 								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 							<?php
 							endif;
@@ -194,7 +194,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_center_composition' ) 
             <?php
 
             $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
+            if ( !empty($description) || is_customize_preview() ) : ?>
               <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
             <?php
             endif;
@@ -258,7 +258,7 @@ if ( ! function_exists( 'nateserk_tinycup_set_site_header_right_composition' ) )
               <?php
 
                 $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
+                if ( !empty($description) || is_customize_preview() ) : ?>
                   <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
                 <?php
                 endif;
